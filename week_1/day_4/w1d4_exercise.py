@@ -31,6 +31,9 @@ special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
 # 1. create the following variables and assign them Booleans as False
     # has_uppercase
+has_uppercase = bool(password.lower())
+print(f"The variable 'has_uppercase' is set to {has_uppercase}")
+print(password.lower())
     # has_lowercase
     # has_number
     # has_special_char
@@ -39,13 +42,10 @@ special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 # OR you can create a new list variable of the string password
 # using list(string) NOTE: assign it a new variable as such:
 # password_list = list(password) prior to looping.
+
 password_list = list(password)
-# passwd_letters = []
 for let in password_list:
     print(let)
-    # passwd_letters.append(let)
-# print(passwd_letters)
-# print(password_list)
 
 # 3. For each iteration of the loop, create a if statement
 # check to see if it exists in any of the list by using IN

@@ -5,16 +5,22 @@
 lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 # 1. loop through the lowercase and print each element
+for lett in lowercase:
+    print(lett)
 
 # 2. loop through the lowercase and print the capitalization of each element
+for lett in lowercase:
+    print(lett.upper())
 
 # MEDIUM
 
 # 1. create a new variable called uppercase with an empty list
-
+uppercase = []
 # 2. loop through the lowercase list
+for lett in lowercase:
     # 2a. append the capitalization of each element to the uppercase list
-
+    uppercase.append(lett.upper())
+print(uppercase)
 # HARD
 
 # A safe password has a minimum of (1) uppercase, (1) lowercase, (1) number, (1) special character.
@@ -33,6 +39,13 @@ special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 # OR you can create a new list variable of the string password
 # using list(string) NOTE: assign it a new variable as such:
 # password_list = list(password) prior to looping.
+password_list = list(password)
+# passwd_letters = []
+for let in password_list:
+    print(let)
+    # passwd_letters.append(let)
+# print(passwd_letters)
+# print(password_list)
 
 # 3. For each iteration of the loop, create a if statement
 # check to see if it exists in any of the list by using IN

@@ -53,9 +53,10 @@ us_states = ["Alabama",
 ]
 
 # print the LENgth of us_states
-
+print(len(us_states))
 # print the comparison boolean of the LENgth of us_states to 50
-
+print(len(us_states) == 50)
 # create a variable my_state_index and assign the index value of the state you currently reside in
-
+my_state_index = us_states[5]
 # print us_state with my_state_index to ACCESS your state!
+print(my_state_index)

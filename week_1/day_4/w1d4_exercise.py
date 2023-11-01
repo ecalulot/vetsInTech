@@ -101,4 +101,4 @@ if final_result_shorthand == False:
     elif has_special_char != True:
         print("You are missing a special character in the password")
 
-if has_uppercase != True or has_lowercase != True or has_number != True or has_special_char != True:
+# if has_uppercase != True or has_lowercase != True or has_number != True or has_special_char != True:

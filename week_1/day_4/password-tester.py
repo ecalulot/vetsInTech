@@ -35,6 +35,7 @@ if final_result_shorthand == True:
 else:
     print("Update password: too weak")
     # password = input("Enter a stronger password: ")
+# probably use a while loop want to set it 'while final_result_shorthand = False' DO the loop, until True
 
 if final_result_shorthand == False:
     if has_uppercase != True:

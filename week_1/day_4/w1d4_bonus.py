@@ -6,7 +6,7 @@
 
 import youtube_dl 
 # Asks for the url
-link = input("Write the url")
+link = input("Write the url: ")
 # Instantiate the YoutubeDL class from the youtube_dl framework
 ydl = youtube_dl.YoutubeDL({})
 # Download the video.

@@ -31,12 +31,13 @@ special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
 # 1. create the following variables and assign them Booleans as False
     # has_uppercase
-has_uppercase = bool(password.lower())
-print(f"The variable 'has_uppercase' is set to {has_uppercase}")
-print(password.lower())
+bool(has_uppercase) == False
     # has_lowercase
+has_lowercase == False
     # has_number
+has_number == False
     # has_special_char
+has_special_char == False
 
 # 2. loop through the string password (same as a list)
 # OR you can create a new list variable of the string password
@@ -52,24 +53,49 @@ for let in password_list:
 # if it does exist, update the appropriate variable and CONTINUE
 # not break.
 
+password_list = list(password)
+for let in password_list:
+    if let in lowercase:
+        has_lowercase == True
+        continue
+    elif let in uppercase:
+        has_uppercase == True
+        continue
+    elif let in special_char:
+        has_special_char == True
+        continue
+    elif let in range(1,10):
+        has_number == True
+        continue
+
 # NOTE: to see if it has a number, use range from 0 - 10!
 
 # 4. do a final check to see if all of your variables are TRUE
 # by using the AND operator for all 4 conditions. (This is done for you, uncomment below)
 
-# final_result = has_uppercase == True and has_lowercase == True and has_number == True and has_special_char == True
+final_result = has_uppercase == True and has_lowercase == True and has_number == True and has_special_char == True
 
 # NOTE: we can shorthand this by just checking if the variable exists (returns True)
-#final_result_shorthand = has_uppercase and has_lowercase and has_number and has_special_char
+final_result_shorthand = has_uppercase and has_lowercase and has_number and has_special_char
 # this will fail the same if any one of them is False
 
 # If the final_result is true, print "SAFE STRONG PASSWORD"
 # else, print "Update password: too weak"
 # NOTE: this must be done outside of the loop
-
+if final_result_shorthand == True:
+    print("Your password is safe and strong")
+else:
+    print("Update password: too weak")
 
 # BONUS: update the password variable to take in an user input!
 
 # NIGHTMARE: in the final check, use another if statement to list why it isn't a strong password!
-
-
+if final_result_shorthand == False:
+    if has_uppercase != True:
+        print("Your password is missing an uppercase.")
+    elif has_lowercase != True:
+        print("Your password is missing a lowercase.")
+    elif has_number != True:
+        print("You are missing a number in your password.")
+    elif has_special_char != True:
+        print("You are missing a special character in the password")

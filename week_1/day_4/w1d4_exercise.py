@@ -20,7 +20,7 @@ uppercase = []
 for lett in lowercase:
     # 2a. append the capitalization of each element to the uppercase list
     uppercase.append(lett.upper())
-print(uppercase)
+# print(uppercase)
 # HARD
 
 # A safe password has a minimum of (1) uppercase, (1) lowercase, (1) number, (1) special character.
@@ -86,7 +86,7 @@ if final_result_shorthand == True:
     print("Your password is safe and strong")
 else:
     print("Update password: too weak")
-    password = input("Enter a stronger password: ")
+    # password = input("Enter a stronger password: ")
 
 # BONUS: update the password variable to take in an user input!
 
@@ -100,3 +100,5 @@ if final_result_shorthand == False:
         print("You are missing a number in your password.")
     elif has_special_char != True:
         print("You are missing a special character in the password")
+
+if has_uppercase != True or has_lowercase != True or has_number != True or has_special_char != True:

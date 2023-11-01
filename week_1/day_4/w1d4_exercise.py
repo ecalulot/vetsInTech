@@ -45,8 +45,8 @@ has_special_char = False
 # password_list = list(password) prior to looping.
 
 password_list = list(password)
-for let in password_list:
-    print(let)
+for char in password_list:
+    print(char)
 
 # 3. For each iteration of the loop, create a if statement
 # check to see if it exists in any of the list by using IN
@@ -54,17 +54,17 @@ for let in password_list:
 # not break.
 
 password_list = list(password)
-for let in password_list:
-    if let in lowercase:
+for char in password_list:
+    if char in lowercase:
         has_lowercase = True
         continue
-    elif let in uppercase:
+    elif char in uppercase:
         has_uppercase = True
         continue
-    elif let in special_char:
+    elif char in special_char:
         has_special_char = True
         continue
-    elif let in range(1,10):
+    elif int(char) in list(range(1,10)):
         has_number = True
         continue
 
@@ -73,7 +73,7 @@ for let in password_list:
 # 4. do a final check to see if all of your variables are TRUE
 # by using the AND operator for all 4 conditions. (This is done for you, uncomment below)
 
-final_result = has_uppercase == True and has_lowercase == True and has_number == True and has_special_char == True
+# final_result = has_uppercase == True and has_lowercase == True and has_number == True and has_special_char == True
 
 # NOTE: we can shorthand this by just checking if the variable exists (returns True)
 final_result_shorthand = has_uppercase and has_lowercase and has_number and has_special_char
@@ -86,6 +86,7 @@ if final_result_shorthand == True:
     print("Your password is safe and strong")
 else:
     print("Update password: too weak")
+    password = input("Enter a stronger password: ")
 
 # BONUS: update the password variable to take in an user input!
 

@@ -31,13 +31,13 @@ special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
 # 1. create the following variables and assign them Booleans as False
     # has_uppercase
-bool(has_uppercase) == False
+has_uppercase = False
     # has_lowercase
-has_lowercase == False
+has_lowercase = False
     # has_number
-has_number == False
+has_number = False
     # has_special_char
-has_special_char == False
+has_special_char = False
 
 # 2. loop through the string password (same as a list)
 # OR you can create a new list variable of the string password
@@ -56,16 +56,16 @@ for let in password_list:
 password_list = list(password)
 for let in password_list:
     if let in lowercase:
-        has_lowercase == True
+        has_lowercase = True
         continue
     elif let in uppercase:
-        has_uppercase == True
+        has_uppercase = True
         continue
     elif let in special_char:
-        has_special_char == True
+        has_special_char = True
         continue
     elif let in range(1,10):
-        has_number == True
+        has_number = True
         continue
 
 # NOTE: to see if it has a number, use range from 0 - 10!

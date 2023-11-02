@@ -6,7 +6,7 @@ my_favorite_band = 'The Birthday Massacre'
 
 # PRINT a CONCATENATION of the variable and a string literal: " is my favorite band!"
 print(my_favorite_band + ' is my favorite band!')
-# print(f"{my_favorite_band} is my favorite band!")
+print(f"{my_favorite_band} is my favorite band!")
 
 
 # prompt an user INPUT to ask "What is your favorite color?" and assign it to a variable called "user_favorite_color"

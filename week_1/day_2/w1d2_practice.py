@@ -7,5 +7,5 @@ tax_percentage = 0.18
 # c. assign a variable 'tax_amount' to the product of subtotal and tax_percentage 
 tax_amount = subtotal * tax_percentage
 # d. assign a variable 'total' to the sum of subtotal and tax_amount
-total = tax_amount + subtotal
+total = round(tax_amount + subtotal, 2)
 print(f"Your final amount is {total}, please pay at the first window.")

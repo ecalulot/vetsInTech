@@ -25,8 +25,8 @@ for lett in lowercase:
 
 # A safe password has a minimum of (1) uppercase, (1) lowercase, (1) number, (1) special character.
 
-password = "MySuperSafePassword!@34"
-# password = input("Hello user! Enter a password: ")
+# password = "MySuperSafePassword!@34"
+password = input("Hello user! Enter a password: ")
 
 special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
@@ -87,39 +87,22 @@ if final_result_shorthand == True:
     print("Your password is safe and strong")
 else:
     print("Update password: too weak")
-    # password = input("Enter a stronger password: ")
 
 # BONUS: update the password variable to take in an user input!
 
 # NIGHTMARE: in the final check, use another if statement to list why it isn't a strong password!
 
-# initialize empty array/list to store missing password requirements
-missing_reqs = []
 # using a while loop allows "continue"
 
 if final_result_shorthand == False:
     if has_uppercase != True:
-        # print("Your password is missing an uppercase.")
-        missing_reqs.append('uppercase')
-        
-    elif has_lowercase != True:
-        # print("Your password is missing a lowercase.")
-        missing_reqs.append('lowercase')
-        
-    elif has_number != True:
-        # print("You are missing a number in your password.")
-        missing_reqs.append('number')
-        
-    elif has_special_char != True:
-        # print("You are missing a special character in the password")
-        missing_reqs.append('special character')
-        
-# print("You are missing the following password requirement(s), at least one \
-#       of the following: " + missing_reqs[:])
+        print("Your password is missing an uppercase.")       
+    if has_lowercase != True:
+        print("Your password is missing a lowercase.")
+    if has_number != True:
+        print("You are missing a number in your password.")       
+    if has_special_char != True:
+        print("You are missing a special character in the password")
 
-    print("You are missing the following password requirement(s), at least one \
-of the following: ")
-    print(missing_reqs[:])
-
-
-# if has_uppercase != True or has_lowercase != True or has_number != True or has_special_char != True:
+# the 'if' statement will keep checking all 'if' statements without kicking you out of the loop.
+# i should have remembered that from previous learnings. 

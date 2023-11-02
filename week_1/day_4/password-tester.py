@@ -2,7 +2,7 @@ lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n
 
 uppercase = []
 for lett in lowercase:
-        uppercase.append(lett.upper())
+    uppercase.append(lett.upper())
 
 special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
@@ -31,18 +31,27 @@ for char in password_list:
 final_result_shorthand = has_uppercase and has_lowercase and has_number and has_special_char
     
 if final_result_shorthand == True:
-    print("Your password is safe and strong")
+    print("Your password is safe and strong.\n")
 else:
-    print("Update password: too weak")
+    print("Update password: too weak.\n")
     # password = input("Enter a stronger password: ")
-# probably use a while loop want to set it 'while final_result_shorthand = False' DO the loop, until True
 
+missing_reqs = []
 if final_result_shorthand == False:
     if has_uppercase != True:
+        missing_reqs.append('uppercase')
         print("Your password is missing an uppercase.")
-    elif has_lowercase != True:
+    if has_lowercase != True:
+        missing_reqs.append('lowercase')
         print("Your password is missing a lowercase.")
-    elif has_number != True:
+    if has_number != True:
+        missing_reqs.append('number')
         print("You are missing a number in your password.")
-    elif has_special_char != True:
+    if has_special_char != True:
+        missing_reqs.append('special character')
         print("You are missing a special character in the password")
+
+# This code block works. 
+#     print("\nYou are missing the following password requirement(s), at least one \
+# of the following: ")
+#     print(missing_reqs[:])

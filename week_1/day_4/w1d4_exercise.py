@@ -21,6 +21,7 @@ for lett in lowercase:
     # 2a. append the capitalization of each element to the uppercase list
     uppercase.append(lett.upper())
 # print(uppercase)
+# pretty sure the above can be done in a list comprehension - relearn this.
 # HARD
 
 # A safe password has a minimum of (1) uppercase, (1) lowercase, (1) number, (1) special character.

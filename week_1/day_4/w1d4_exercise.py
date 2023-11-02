@@ -65,7 +65,7 @@ for char in password_list:
     elif char in special_char:
         has_special_char = True
         continue
-    elif int(char) in list(range(1,10)):
+    elif int(char) in list(range(0,10)):
         has_number = True
         continue
 
@@ -103,4 +103,4 @@ if final_result_shorthand == False:
         print("You are missing a special character in the password")
 
 # the 'if' statement will keep checking all 'if' statements without kicking you out of the loop.
-# i should have remembered that from previous learnings. 
+# i should have remembered that from previous lessons. 

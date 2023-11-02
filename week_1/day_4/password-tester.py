@@ -1,8 +1,8 @@
 lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-uppercase = []
-for lett in lowercase:
-    uppercase.append(lett.upper())
+uppercase = [lett.upper() for lett in lowercase] # list comprehension
+# for lett in lowercase:
+#     uppercase.append(lett.upper())
 
 special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
@@ -36,19 +36,19 @@ else:
     print("Update password: too weak.\n")
     # password = input("Enter a stronger password: ")
 
-missing_reqs = []
+# missing_reqs = []
 if final_result_shorthand == False:
     if has_uppercase != True:
-        missing_reqs.append('uppercase')
+        # missing_reqs.append('uppercase')
         print("Your password is missing an uppercase.")
     if has_lowercase != True:
-        missing_reqs.append('lowercase')
+        # missing_reqs.append('lowercase')
         print("Your password is missing a lowercase.")
     if has_number != True:
-        missing_reqs.append('number')
+        # missing_reqs.append('number')
         print("You are missing a number in your password.")
     if has_special_char != True:
-        missing_reqs.append('special character')
+        # missing_reqs.append('special character')
         print("You are missing a special character in the password")
 
 # This code block works. 

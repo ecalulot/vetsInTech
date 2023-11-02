@@ -92,8 +92,6 @@ else:
 
 # NIGHTMARE: in the final check, use another if statement to list why it isn't a strong password!
 
-# using a while loop allows "continue"
-
 if final_result_shorthand == False:
     if has_uppercase != True:
         print("Your password is missing an uppercase.")       

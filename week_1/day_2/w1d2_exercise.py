@@ -22,10 +22,10 @@ plus_ten = double_numb + 10
 cut_in_half = plus_ten / 2
 
 # assign a variable "step_5" to the difference between step_4 and step_1
-final_numb = cut_in_half - my_numb
+final_val = cut_in_half - my_numb
 
 # print step_5 and you should see 5!
-print(f'\nThe magic number is {final_numb}, TADA!\n')
+print(f'\nThe magic number is {final_val}, TADA!\n')
 
 # BONUS 1: can you convert step_1 to prompt a user's input?
 # HINT: you need to cast step_1 to a int because user input is a type string.

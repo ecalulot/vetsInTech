@@ -55,3 +55,6 @@ if final_result_shorthand == False:
 #     print("\nYou are missing the following password requirement(s), at least one \
 # of the following: ")
 #     print(missing_reqs[:])
+
+# the 'if' statement will keep checking all 'if' statements without kicking you out of the loop.
+# i should have remembered that from previous learnings. 

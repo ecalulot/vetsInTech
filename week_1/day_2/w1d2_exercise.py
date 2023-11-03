@@ -20,6 +20,8 @@ plus_ten = double_numb + 10
 
 # assign a variable "step_4" to the quotient of step_3 and the number 2
 cut_in_half = plus_ten / 2
+# can use floor operator 'cut_in_half = plus_ten // 2' to use only the 
+# quotient and not have to worry about the answer being a float
 
 # assign a variable "step_5" to the difference between step_4 and step_1
 final_val = cut_in_half - my_numb
@@ -34,3 +36,5 @@ new_numb = int(input('Enter a number from 1 - 9: '))
 # BONUS 2: can you REFACTOR using less variables?
 final_output = ((((new_numb * 2) + 10 ) / 2) - new_numb)
 print(f"\nYour new magic number is: {final_output}, voila!")
+# same as above: use the floor operator // to make keep the output an integer
+# rather than a float. pretty smart to do so. 

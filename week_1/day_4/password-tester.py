@@ -7,6 +7,7 @@ uppercase = [lett.upper() for lett in lowercase] # list comprehension
 special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
 password = input("Hello user! Enter a password: ")
+# password = "MySuperSafePassword!@34"
 
 has_uppercase = False
 has_lowercase = False

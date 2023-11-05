@@ -37,26 +37,36 @@ else:
     print("Update password: too weak.\n")
     # password = input("Enter a stronger password: ")
 
-# missing_reqs = []
+# ternary operation to replace line 34 - 37
+print("Your password is safe and strong." if final_result_shorthand == True else print("Update password: too weak."))
+
+missing_reqs = []
 if final_result_shorthand == False:
     if has_uppercase != True:
-        # missing_reqs.append('uppercase')
+        missing_reqs.append('uppercase')
         print("Your password is missing an uppercase.")
     if has_lowercase != True:
-        # missing_reqs.append('lowercase')
+        missing_reqs.append('lowercase')
         print("Your password is missing a lowercase.")
     if has_number != True:
-        # missing_reqs.append('number')
+        missing_reqs.append('number')
         print("You are missing a number in your password.")
     if has_special_char != True:
-        # missing_reqs.append('special character')
+        missing_reqs.append('special character')
         print("You are missing a special character in the password")
 
 # This code block works. 
-#     print("\nYou are missing the following password requirement(s), at least one \
-# of the following: ")
-#     print(missing_reqs[:])
+    print("\nYou are missing the following password requirement(s), at least one \
+of the following: ")
+    print(missing_reqs)
 # kind of messy output as it puts the list items within quotes
 
 # the 'if' statement will keep checking all 'if' statements without kicking you out of the loop.
 # i should have remembered that from previous learnings. 
+
+pw_reqs = [has_uppercase, has_lowercase, has_number, has_special_char]
+password_strength = [req != True for req in pw_reqs] 
+if password_strength == False:
+    print('Password is missing a requirement. Update password') 
+else: 
+    print('Your password has the proper requirements.')

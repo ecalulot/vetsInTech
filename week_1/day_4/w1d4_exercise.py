@@ -33,7 +33,8 @@ uppercase = [lett.upper() for lett in lowercase]
 # password = "MySuperSafePassword!@34"
 password = input("Hello user! Enter a password: ")
 
-special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
+# added ' ' i.e. space character to the 'special_char' list
+special_char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', ' ']
 
 # 1. create the following variables and assign them Booleans as False
     # has_uppercase
@@ -88,12 +89,16 @@ final_result_shorthand = has_uppercase and has_lowercase and has_number and has_
 # If the final_result is true, print "SAFE STRONG PASSWORD"
 # else, print "Update password: too weak"
 # NOTE: this must be done outside of the loop
-if final_result_shorthand == True:
-    print("Your password is safe and strong")
-else:
-    print("Update password: too weak")
+# if final_result_shorthand == True:
+#     print("Your password is safe and strong")
+# else:
+#     print("Update password: too weak")
+
+# ternary operation of lines 92 - 95
+print("Your password is safe and strong." if final_result_shorthand == True else print("Update password: too weak."))
 
 # BONUS: update the password variable to take in an user input!
+ # See line 34 for BONUS
 
 # NIGHTMARE: in the final check, use another if statement to list why it isn't a strong password!
 
@@ -109,3 +114,12 @@ if final_result_shorthand == False:
 
 # the 'if' statement will keep checking all 'if' statements without kicking you out of the loop.
 # i should have remembered that from previous lessons. 
+
+
+# refactor attempt to use list comprehension
+pw_reqs = [has_uppercase, has_lowercase, has_number, has_special_char]
+password_strength = [req != True for req in pw_reqs] 
+if password_strength == False:
+    print('Password is missing a requirement. Update password') 
+else: 
+    print('Your password has the proper requirements.')

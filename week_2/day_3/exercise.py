@@ -24,10 +24,14 @@ print(fate)
 # Using this concept we will create our own function for a new workbook in openpyxl
 
 # Create a list called first_names and prepopulate with 10 custom first names
+first_names = ['Alexandre', 'Edmond', 'Sherlock', 'Dante', 'Tom', 'William', 'Ayn', 'Isaac', 'Brandon', 'Guy']
 
 # Create a list called last_names and prepopulate with 10 custom last names
+last_names = ['Dumas', 'Dantes', 'Holmes', 'Alighieri', 'Sawyer', 'Shakespeare', 'Rand', 'Asimov', 'Sanderson', 'Montag']
 
 # Define a function called assign_names with a parameter 'row'
+def assign_names(row):
+
 #   - cell at row=row and column=1 assign the value to str(random.randint(111111, 999999))
 #   - cell at row=row and column=2 assign the value to a random choice of first name
 #   - cell at row=row and column=3 assign the value to a random choice of last name
@@ -35,6 +39,7 @@ print(fate)
 # set up appropriately for a new workbook and worksheet
 
 # loop through the range of 1-10 and for each number in the range
+for val in range(1, 10):
 # - call/invoke the assign_names function while passing in the number as the 'row' argument
 
 # save your new workbook!

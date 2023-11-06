@@ -28,21 +28,21 @@ user_1 = {
     "lastName": "Lentell",
     "role": "Instructor",
     "id": "95485"
-}
+    }
 
 user_2 = {
     "firstName": "Brion",
     "lastName": "Lentell",
     "role": "Instructor",
     "id": "67344"
-}
+    }
 
 user_3 = {
     "firstName": "Daniel",
     "lastName": "Kim",
     "role": "Instructor",
     "id": "74324"
-}
+    }
 
     # b. Dictionaries - Run the functions (3 times for each user!)
 
@@ -52,11 +52,13 @@ instructor_list = [user_1, user_2, user_3]
     # c. List - create a function that takes in the list and 
     # checks if the each user's role is equal to "INSTRUCTOR". 
     # if it is the same, print VALID else print INVALID (try to use a loop here!)
+def role_validation(instructor_list):
+    user_role =[print("VALID") if role == 'INSTRUCTOR' else print("INVALID")]
 
 # role_check(instructor_list)
 
     # d. import the random module and update the function to re-assign the id of each user
-
+import random
     # e. don't forget to run it!
     
 # 3. Explicit Functions

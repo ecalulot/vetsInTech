@@ -8,7 +8,8 @@
 # access and store the appropriate worksheet to the variable 'ws'
 
 # Define a function called add_order_amount that takes in a single parameter called 'row'
-
+def add_order_amount(row):
+    
     # IF the quantity is less or equal to than the threshold,
 
         # than calculate the order_amount (max_amount - quantity) 

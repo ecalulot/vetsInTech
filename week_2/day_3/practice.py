@@ -8,8 +8,8 @@ def print_greeting():
     print(greetings)
 
 # run it here!
+salutations = print_greeting()
 
-     
     # b. Convert this implicit return function to an explicit return function!
 
 def return_greeting():

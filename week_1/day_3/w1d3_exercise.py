@@ -58,5 +58,11 @@ print(len(us_states))
 print(len(us_states) == 50)
 # create a variable my_state_index and assign the index value of the state you currently reside in
 my_state_index = us_states[5]
+
+my_state_index = 8
+my_state_index = us_states.index("Florida")
+print(us_states[my_state_index])
+# the above is another means to do the question
+
 # print us_state with my_state_index to ACCESS your state!
 print(my_state_index)

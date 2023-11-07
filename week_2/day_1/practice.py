@@ -1,8 +1,11 @@
 # ITP Week 2 Day 1 (In-Class) Practice
 
 # A1. from the appropriate library, import only the Workbook
+from openpyxl import workbook
 
 # A2. Before anything, we need a workbook to work with..
+wb = workbook()
+print(type(wb))
 
 # A3. We need to interact with a single worksheet.
 

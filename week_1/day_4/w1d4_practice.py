@@ -58,6 +58,10 @@ print(len(us_state))
 # my_state_index = us_state[5]
 my_state_index = int(5)
 print(my_state_index)
+
+my_state_index = us_state.index("Florida")
+us_state[8]
+
 # 3. let's see if you were right.. uncomment below and run. Do you see your state?
 
 print("My state is: " + us_state[my_state_index])

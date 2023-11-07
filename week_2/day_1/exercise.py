@@ -25,4 +25,10 @@
 # TIP: create a list of each column (ie. product_names = [oreo, ...]) and use those to loop through :)
 
 # save your file
+from openpyxl import Workbook
+wb = Workbook()
+ws = wb.active
+ws.title = "CURRENT_MONTH_INVENTORY"
+
+print(wb.sheetnames)
 wb.save("./spreadsheets/inventory.xlsx")

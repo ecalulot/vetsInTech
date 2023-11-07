@@ -94,7 +94,7 @@ final_result_shorthand = has_uppercase and has_lowercase and has_number and has_
 # else:
 #     print("Update password: too weak")
 
-# ternary operation of lines 92 - 95
+# refactor using ternary operation for lines 92 - 95
 print("Your password is safe and strong." if final_result_shorthand == True else print("Update password: too weak."))
 
 # BONUS: update the password variable to take in an user input!
@@ -117,9 +117,9 @@ if final_result_shorthand == False:
 
 
 # refactor attempt to use list comprehension
-pw_reqs = [has_uppercase, has_lowercase, has_number, has_special_char]
-password_strength = [req != True for req in pw_reqs] 
-if password_strength == False:
-    print('Password is missing a requirement. Update password') 
-else: 
-    print('Your password has the proper requirements.')
+# pw_reqs = [has_uppercase, has_lowercase, has_number, has_special_char]
+# password_strength = [req != True for req in pw_reqs] 
+# if password_strength == False:
+#     print('Password is missing a requirement. Update password') 
+# else: 
+#     print('Your password has the proper requirements.')

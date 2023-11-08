@@ -5,10 +5,9 @@
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter, column_index_from_string
 
-wb = load_workbook("week_2/spreadsheets/inventory.xlsx")
-
 # Import the workbook that you created in yesterday's exercise from
 # "./spreadsheets/inventory.xlsx"
+wb = load_workbook("week_2/spreadsheets/inventory.xlsx")
 
 # verify what sheet names are available
 print(wb.sheetnames)

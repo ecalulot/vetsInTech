@@ -6,6 +6,8 @@
 
 # Rewrite the functions from practice_2 using parameters:
 # add_num
+def add_num(x, y):
+    return (x + y)
 
 # subtract_num
 

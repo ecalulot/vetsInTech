@@ -30,5 +30,42 @@ wb = Workbook()
 ws = wb.active
 ws.title = "CURRENT_MONTH_INVENTORY"
 
+product_name = ['product name', 'oreo', 'coke', 'pepsi', 'lays chip', 'pringles',
+                'sour worms', 'choco cookies', 'donuts', 'hot dogs', 'ice cream', 
+                'gum', 'pretzels', 'kit kat']
+# print(f"Product Name: {len(product_name)}")
+
+for num in range(1, len(product_name)+1):
+    ws.cell(row=num, column=1, value=product_name[num-1])
+
+product_id = ['product id', '2323', '6545', '3456', '4567', '2134', '2362',
+              '0923', '2786', '6723', '9237', '2092', '8246', '9276'] 
+# print(f"Product ID: {len(product_id)}")
+for num in range(1, len(product_id)+1):
+    ws.cell(row=num, column=2, value=product_id[num-1])
+
+# create the columns into a list
+# include the title in the list
+
+max_amount = ['max amount', 1000, 500, 200, 1500, 2000, 100, 200,
+              200, 100, 200, 3500, 100, 1000]
+# print(f"Max amount: {len(max_amount)}")
+for num in range(1, len(max_amount)+1):
+    ws.cell(row=num, column=3, value=max_amount[num-1])
+
+reorder_threshold = ['reorder threshold', 300, 100, 50, 500, 600, 10, 
+                     25, 25, 10, 50, 1000, 5, 250]
+# print(f"Reorder threshold: {len(reorder_threshold)}")
+for num in range(1, len(reorder_threshold)+1):
+    ws.cell(row=num, column=4, value=reorder_threshold[num-1])
+
+quantity = ['quantity', 743, 101, 137, 364, 120, 
+            85, 24, 12, 39, 234, 1232, 11, 249]
+# print(f"Quantity: {len(quantity)}")
+for num in range(1, len(quantity)+1):
+    ws.cell(row=num, column=5, value=quantity[num-1])
+
+# make sure to assign data types i.e. 'str' and 'int', product_id is a str though
 print(wb.sheetnames)
-wb.save("./spreadsheets/inventory.xlsx")
+# wb.save("./spreadsheets/inventory.xlsx")
+wb.save("week_2/spreadsheets/inventory.xlsx") # by relative pathing

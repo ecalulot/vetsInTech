@@ -41,18 +41,41 @@ ws.cell(row=1, column=2, value="Last Name")
 # for cell in column_a:
 #     cell.value = 'Gabriel'
 
-for row in ws.iter_rows(min_row=2, max_row=10, min_col=1, max_col=1):
-    for cell in row:
-        cell.value = "Gabriel"
+for num in range(2, 11):
+    ws.cell(row=num, column=1, value="Gabriel")
 
-# last_names = ['Rolley', 'Smith', 'Balenga', 'Issac', 'Cruise', 'Depp', 'Heard', 'Qiao', 'Biden']
+# for row in ws.iter_rows(min_row=2, max_row=10, min_col=1, max_col=1):
+#     for cell in row:
+#         cell.value = "Gabriel"
+# above is not quite correct
+
+
+last_names = ['Rolley', 'Smith', 'Balenga', 'Issac', 'Cruise', 'Depp', 'Heard', 'Qiao', 'Biden']
 
 # # B2. Loop through a range from row 2 to 10 and assign the cell value to last names according to index in column B
 # # NOTE: PAY ATTENTION to the starting number of the range and how it differs from the starting index of the list
+# for name in last_names:
+#     pass
+# for row in ws.iter_rows(min_row=2, max_row=10, min_col=2, max_col=2): # rows 2-10, column B
+#     for cell in row:
+#         cell.value = name in last_names
+# above didnt work
 
-# for row in ws.iter_rows(min_row=2, max_row=10, min_col=2): # rows 2-10, column B
-#     for name in last_names:
-#         cell.value = name
+
+for num in range(2, 11):
+    ws.cell(row=num, column=2, value=last_names[num-2])
+# start at row 2 and go to row 10
+# last_name[2-2] will start the last_names at index 0
+
+# xx = 2
+# for name in last_names:
+#     ws.cell(xx,2,name)
+#     xx+=1
+# # see how lines 68 - 71 work and go over lines 63 - 64. that's really elegant
+
 # # B3. Save the file
 # wb.save("./spreadsheets/day_1_practice.xlsx")
 wb.save("/home/ra11y/Downloads/local.source/vetsInTech/week_2/spreadsheets/day_1_practice.xlsx")
+
+# week_2/spreadsheets
+# this is from relative path by r-clicking the 'spreadsheets' directory

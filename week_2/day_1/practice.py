@@ -9,7 +9,6 @@ print(type(wb))
 
 # A3. We need to interact with a single worksheet.
 ws = wb.active
-Workbook.create_sheet()
 
 # A4. assign the value of "First Name" to A1
 first_cell = ws['A1'].value = "First Name"
@@ -33,8 +32,8 @@ last_names = ['Rolley', 'Smith', 'Balenga', 'Issac', 'Cruise', 'Depp', 'Heard', 
 # B2. Loop through a range from row 2 to 10 and assign the cell value to last names according to index in column B
 # NOTE: PAY ATTENTION to the starting number of the range and how it differs from the starting index of the list
 
-for row in ws.iter_rows(min_row=2, max_row=10, col=2): # rows 2-10, column B
+for row in ws.iter_rows(min_row=2, max_row=10, min_col=2): # rows 2-10, column B
     for name in last_names:
-        pass
+        cell.value = name
 # B3. Save the file
 wb.save("./spreadsheets/day_1_practice.xlsx")

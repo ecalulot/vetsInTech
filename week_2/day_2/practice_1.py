@@ -2,6 +2,13 @@
 # 
 # You will continue to work on the inventory spreadsheet that you created from yesterday's exercise
 # import the appropriate method from the correct module
+from openpyxl import Workbook
+
+
+
+wb = load_workbook(<insert file name and path here>)
+
+
 
 # Import the workbook that you created in yesterday's exercise from
 # "./spreadsheets/inventory.xlsx"

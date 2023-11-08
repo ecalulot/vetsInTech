@@ -12,18 +12,22 @@ ws = wb.active
 Workbook.create_sheet()
 
 # A4. assign the value of "First Name" to A1
-ws = wb.create_sheet("First Name")
-# ws = wb.create_sheet("First Name", 0)
+first_cell = ws['A1'].value = "First Name"
 
 # A5. assign the value of "Last Name" to B1
-ws = wb.create_sheet("Last Name", 1)
-d = ws.cell(row=1, column=2, value='Last Name') # B1 is row(numbers) 1 and column(letters) 2
+next_cell = ws['B1'] = "Last Name"
+
 # STOP HERE - RETURN TO LECTURE
 
 # B1. For all of column A, starting at row 2 until row 10, make the cell values: "Gabriel" (attempt a loop)
 
 for sheet in range(2, 11):
     pass
+
+column_a = ws['A']
+for cell in column_a:
+    for row in range(2, 11)
+    print()
 
 last_names = ['Rolley', 'Smith', 'Balenga', 'Issac', 'Cruise', 'Depp', 'Heard', 'Qiao', 'Biden']
 

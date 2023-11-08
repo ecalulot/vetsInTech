@@ -8,7 +8,8 @@ wb = Workbook()
 print(type(wb))
 
 # A3. We need to interact with a single worksheet.
-ws = wb.active
+ws = wb.active # default activates the first worksheet
+ws.title = "W2D1-practice" # gives the worksheet a title
 
 # A4. assign the value of "First Name" to A1
 first_cell = ws['A1'] = "First Name"

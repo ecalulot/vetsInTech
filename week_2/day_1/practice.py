@@ -26,8 +26,7 @@ for sheet in range(2, 11):
 
 column_a = ws['A']
 for cell in column_a:
-    for row in range(2, 11)
-    print()
+    cell.value = 'Gabriel'
 
 last_names = ['Rolley', 'Smith', 'Balenga', 'Issac', 'Cruise', 'Depp', 'Heard', 'Qiao', 'Biden']
 

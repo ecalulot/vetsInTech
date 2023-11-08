@@ -11,17 +11,25 @@ for lett in lowercase:
 # 2. loop through the lowercase and print the capitalization of each element
 for lett in lowercase:
     print(lett.upper())
+    # these next two might work just because the list are single chars
+    # print(lett.capitalize())
+    # print(lett.title())
 
 # MEDIUM
 
-# 1. create a new variable called uppercase with an empty list
+# # 1. create a new variable called uppercase with an empty list
 # uppercase = []
-# 2. loop through the lowercase list
+# # 2. loop through the lowercase list
 
+# # for lett in lowercase:
+# #     # 2a. append the capitalization of each element to the uppercase list
+# #     uppercase.append(lett.upper())
+# # print(uppercase)
 # for lett in lowercase:
-#     # 2a. append the capitalization of each element to the uppercase list
 #     uppercase.append(lett.upper())
+
 # print(uppercase)
+
 
 # pretty sure the above can be done in a list comprehension - relearn this.
 uppercase = [lett.upper() for lett in lowercase]
@@ -74,6 +82,12 @@ for char in password_list:
     elif int(char) in list(range(0,10)):
         has_number = True
         continue
+# better version:
+    # elif letter.isdigit():
+    #     has_number = True
+    #     continue
+# continue is actually not necessary for the whole block of code
+# might have to create an list of actual numbers to check against
 
 # NOTE: to see if it has a number, use range from 0 - 10!
 
@@ -101,7 +115,7 @@ print("Your password is safe and strong." if final_result_shorthand == True else
  # See line 34 for BONUS
 
 # NIGHTMARE: in the final check, use another if statement to list why it isn't a strong password!
-
+# should create line 112 into a block and add lines 119 - 127 under the failed weak password as a sub-block of code 
 if final_result_shorthand == False:
     if has_uppercase != True:
         print("Your password is missing an uppercase.")       

@@ -13,7 +13,7 @@ wb = load_workbook("/home/ra11y/Downloads/local.source/vetsInTech/week_2/spreads
 # access and store the appropriate worksheet to the variable 'ws'
 sheet_name_list = wb.sheetnames
 print(f"\nThe sheet(s) in the workbook is called: {sheet_name_list}\n")
-print("Setting the active sheet... \n")
+print("Setting the active sheet name... \n")
 ws = wb['CURRENT_MONTH_INVENTORY']
 m_row = ws.max_row 
 print(f"The maximum rows in the sheet are: {m_row}\n")
@@ -25,11 +25,14 @@ for row_idx in range(2, m_row+1):
     threshold = ws.cell(row=row_idx, column=4).value
     max_amt = ws.cell(row=row_idx, column=3).value
 
+
 # Define a function called add_order_amount that takes in a single parameter called 'row'
-def add_order_amount(row):
-    if ws.cell(quantity) <= threshold:
-        order_amount = max_amt - quantity
-        ws.cell(row=row, column=6, value=order_amount) # by openpyxl column=6 is 'F'
+def add_order_amount(rows):
+    if ws.cell(row=rows, column=5).value <= ws.cell(row=rows, column=4).value:
+        order_amount = ws.cell(row=rows, column=3).value - ws.cell(row=rows, column=5).value
+        ws.cell(row=rows, column=6, value=order_amount) # by openpyxl column=6 is 'F'
+    else:
+        ws.cell(row=rows, column=6, value="Skip reorder")
 
     # IF the quantity is less or equal to than the threshold,
         # than calculate the order_amount (max_amount - quantity) 
@@ -40,4 +43,5 @@ def add_order_amount(row):
 
 for rows in range(2, (ws.max_row)+1):
     add_order_amount(rows)
-    
+
+wb.save("week_2/spreadsheets/inventory.xlsx")

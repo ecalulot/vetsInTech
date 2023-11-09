@@ -23,5 +23,9 @@ def return_greeting():
 # run it here!
 
     # d. Create a variable my_greeting and store the return value of return_hello then print the variable!
+my_greeting = print_greeting()
+
+print(my_greeting)
+
 
 

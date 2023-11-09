@@ -9,6 +9,7 @@ y = int(input("Enter a second number to perform calculation: "))
 # add_num
 def add_num(x, y):
     print(x + y)
+    # return
 
 # subtract_num
 def subtract_num(x, y):

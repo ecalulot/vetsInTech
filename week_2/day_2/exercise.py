@@ -18,24 +18,33 @@ ws = wb['CURRENT_MONTH_INVENTORY']
 m_row = ws.max_row 
 print(f"The maximum rows in the sheet are: {m_row}\n")
 
-# TIP: create variables for quantity, threshold, max_amount that retrieves the values first for cleanliness
-for row_idx in range(2, m_row+1): 
-# start at 2 to account for header, m_row+1 accounts for python inherent "stop_value - 1"
-    quantity = ws.cell(row=row_idx, column=5).value
-    threshold = ws.cell(row=row_idx, column=4).value
-    max_amt = ws.cell(row=row_idx, column=3).value
+# initialize list arrays to iterate through the Excel values
+quantity = []
+threshold = []
+max_amt = []
 
+# TIP: create variables for quantity, threshold, max_amount that retrieves the values first for cleanliness
+
+for rows in range(2, m_row+1):
+# start at 2 to account for headers, m_row+1 accounts for python inherent "stop_value - 1"
+# append values to their respective lists
+    quantity.append(ws.cell(row=rows, column=5).value)
+    threshold.append(ws.cell(row=rows, column=4).value)
+    max_amt.append(ws.cell(row=rows, column=3).value)
 
 # Define a function called add_order_amount that takes in a single parameter called 'row'
 def add_order_amount(rows):
-    if ws.cell(row=rows, column=5).value <= ws.cell(row=rows, column=4).value:
-        order_amount = ws.cell(row=rows, column=3).value - ws.cell(row=rows, column=5).value
+   # must subtract 2 to get to index[0] in initialized Python lists (lines 22-24)
+    if quantity[rows-2] <= threshold[rows-2]:
+        order_amount = max_amt[rows-2] - quantity[rows-2]
         ws.cell(row=rows, column=6, value=order_amount) # by openpyxl column=6 is 'F'
     else:
         ws.cell(row=rows, column=6, value="Skip reorder")
-
+    # without this 'else' statement was calculating the value from very last cells, \
+    # outputting '751' from kit kat cell values: 1000-249
+    
     # IF the quantity is less or equal to than the threshold,
-        # than calculate the order_amount (max_amount - quantity) 
+        # than calculate the order_amount (max_amount - quantity)
         # assign the value to that row, column 6
 
 # Perform a for..in loop through the range(2, len(inventory.rows))

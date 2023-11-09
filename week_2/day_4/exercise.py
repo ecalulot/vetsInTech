@@ -13,6 +13,12 @@ inventory = {
 
 # for item in inventory:
     # decrement item by using an assignment operator
+for k, v in inventory.items():
+    if v <= 0: # for case of 0 in inventory
+        print(k, v)
+    else: 
+        v -= 1
+        print(k, v)
 
     # NOTE: recall that item represents the key of the key:value pair
 
@@ -20,6 +26,11 @@ inventory = {
 # 2. Implicit Functions 
 # (When we work with global variables/objects and don't return anything, 
 # these functions are implicit return functions!)
+def alter_dict(dict):
+    for k, v in dict.items():
+        dict['role'].upper()
+
+print(dict)
 
     # a. Dictionaries - create a function that takes in a dictionary which updates the "role" key value pair and makes it uppercase
 
@@ -43,6 +54,9 @@ user_3 = {
     "role": "Instructor",
     "id": "74324"
     }
+
+
+alter_dict(user_1)
 
     # b. Dictionaries - Run the functions (3 times for each user!)
 

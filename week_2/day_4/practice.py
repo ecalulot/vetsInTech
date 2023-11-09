@@ -25,3 +25,5 @@ person_1['favorite_snack'] = 'Scooby Snacks'
 print(f"Altered the 'favorite_snack' key. The new dictionary is: {person_1}\n")
 
 # Remove the "wears_glasses" key:value from person_1
+del person_1["wears_glasses"]
+print(f"Removing 'wears_glasses' key from dictionary. {person_1}\n")

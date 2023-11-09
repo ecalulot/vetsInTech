@@ -21,9 +21,7 @@ fate = get_fortune()
 print(fate)
 
 # Given the function above, it will randomly choose from the fortunes list and print one.
-# Using this concept we will create our own function for a new workbook in openpyxl
-wb = Workbook()
-ws = wb.active
+
 # Create a list called first_names and prepopulate with 10 custom first names
 first_names = ['Alexandre', 'Edmond', 'Sherlock', 'Dante', 'Tom', 'William', 'Ayn', 'Isaac', 'Brandon', 'Guy']
 
@@ -32,7 +30,7 @@ last_names = ['Dumas', 'Dantes', 'Holmes', 'Alighieri', 'Sawyer', 'Shakespeare',
 
 # Define a function called assign_names with a parameter 'row'
 def assign_names(row):
-    ws.cell(row=row, column=1, value=str(random.randint(1, 9)))
+    ws.cell(row=row, column=1, value=str(random.randint(111_111, 999_999)))
     ws.cell(row=row, column=2, value=(random.choice(first_names)))
     ws.cell(row=row, column=3, value=(random.choice(last_names)))
             
@@ -41,6 +39,8 @@ def assign_names(row):
 #   - cell at row=row and column=3 assign the value to a random choice of last name
 
 # set up appropriately for a new workbook and worksheet
+wb = Workbook()
+ws = wb.active
 
 # loop through the range of 1-10 and for each number in the range
 for num in range(1, 10):

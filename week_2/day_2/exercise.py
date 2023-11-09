@@ -8,7 +8,7 @@ from openpyxl import Workbook, load_workbook
 # relative path can run this program from within VS Code (ctrl+F5)
 # wb = load_workbook("week_2/spreadsheets/inventory.xlsx") 
 
-# explicit path can allow this program to run from terminal: "$python3 exercise.py"
+# absolute path can allow this program to run from terminal: "$python3 exercise.py"
 wb = load_workbook("/home/ra11y/Downloads/local.source/vetsInTech/week_2/spreadsheets/inventory.xlsx")
 # access and store the appropriate worksheet to the variable 'ws'
 sheet_name_list = wb.sheetnames
@@ -26,7 +26,7 @@ max_amt = []
 # TIP: create variables for quantity, threshold, max_amount that retrieves the values first for cleanliness
 
 for rows in range(2, m_row+1):
-# start at 2 to account for headers, m_row+1 accounts for python inherent "stop_value - 1"
+# start at 2 to account for headers, m_row+1 accounts for python inherent "end/stop_value - 1"
 # append values to their respective lists
     quantity.append(ws.cell(row=rows, column=5).value)
     threshold.append(ws.cell(row=rows, column=4).value)
@@ -40,8 +40,8 @@ def add_order_amount(rows):
         ws.cell(row=rows, column=6, value=order_amount) # by openpyxl column=6 is 'F'
     else:
         ws.cell(row=rows, column=6, value="Skip reorder")
-    # without this 'else' statement was calculating the value from very last cells, \
-    # outputting '751' from kit kat cell values: 1000-249
+    # without this 'else' statement program was calculating the value from the very last cells, \
+    # it outputting '751' from kit kat cell values: 1000 - 249
     
     # IF the quantity is less or equal to than the threshold,
         # than calculate the order_amount (max_amount - quantity)
@@ -54,3 +54,4 @@ for rows in range(2, (ws.max_row)+1):
     add_order_amount(rows)
 
 wb.save("week_2/spreadsheets/inventory.xlsx")
+# got to save xlsx file to see alterations. 

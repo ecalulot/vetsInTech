@@ -8,9 +8,13 @@ wb = load_workbook("./spreadsheets/inventory.xlsx")
 # access and store the appropriate worksheet to the variable 'ws'
 ws = wb['Sheet1']
 # Define a function called add_order_amount that takes in a single parameter called 'row'
+quantity_col = ws['5'].value
+threshold_col = ws['4'].value
+max_amt_col = ws['3'].value
+
 def add_order_amount(row):
-    if ws['5 + row'] <= ws['4 + row']:
-        order_amount = (ws['3 + row']- ws['5 + row'])
+    if ws['quantity_col + row'].value <= ws['4' + row].value:
+        order_amount = int(ws['3' + row]- ws['5' + row])
         ws.cell(row=row, column=6, value=order_amount)
 
     # IF the quantity is less or equal to than the threshold,
@@ -20,3 +24,5 @@ def add_order_amount(row):
 
 # Perform a for..in loop through the range(2, len(inventory.rows))
 #   - call the function add_order_amount() passing in the number of the range
+
+for rows in range(2, len(inventory.rows))

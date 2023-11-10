@@ -48,3 +48,18 @@ for rows in range(2, (ws.max_row)+1):
     add_order_amount(rows)
 
 wb.save("week_2/spreadsheets/inventory.xlsx")
+
+# 53-63 instructor method
+# def add_order_amount(row):
+#     quantity = int(ws.cell(row=row, column=5).value)
+#     threshold = int(ws.cell(row=row, column=4).value)
+#     max_amount = int(ws.cell(row=row, column=3).value)
+#     if quantity <= threshold:
+#         order_amount = max_amount - quantity
+#         ws.cell(row=row, column=6, value = order_amount)
+
+
+# for row in range(2, ws.max_row + 1):
+#     add_order_amount(row)
+
+# don't forget to save worksheet

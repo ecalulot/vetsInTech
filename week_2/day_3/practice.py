@@ -15,17 +15,46 @@ salutations = print_greeting()
 def return_greeting():
     greetings = "salutations"
     # CHANGE LINE BELOW
-    print(greetings)
+    return(greetings)
     # CHANGE LINE ABOVE
 
     # c. Run the newly printed code! (Examine NOTHING is printed to the terminal!)
 
 # run it here!
+print(return_greeting())
 
     # d. Create a variable my_greeting and store the return value of return_hello then print the variable!
 my_greeting = print_greeting()
 
 print(my_greeting)
 
+# # using a 'return' in a fcn is called an explicit return statement
+# def return_42():
+#     return 42 # forces the fcn to end 
+
+# # we are explcitly returning something to the fcn called. this can then be later 
+# # used further within the code.
+
+# def return_42():
+#     forty_two = 42
+#     return forty_two
+
+# print(forty_two) # program does not know 'forty_two' because it is out of scope
+
+# def useReturn(forty_two): # this fcn is using the other fcn as its arguement
+#     forty_two + 8 
+#     print(forty_two + 8)
 
 
+# useReturn(return_42()) # this will give us the forty_two we need
+
+# # so the useReturn must use the other function as its arguement 
+
+# def take_a_number(num):
+#     return num ** num
+
+# take_a_number(3)
+
+
+
+# # printing a value is not the same as returning a value

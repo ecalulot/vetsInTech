@@ -1,4 +1,5 @@
 # ITP Week 2 Day 4 Exercise
+import random
 
 # 1. Dictionary Loop
 
@@ -26,11 +27,16 @@ for k, v in inventory.items():
 # 2. Implicit Functions 
 # (When we work with global variables/objects and don't return anything, 
 # these functions are implicit return functions!)
-def alter_dict(dict):
-    for k, v in dict.items():
-        dict['role'].upper()
+def alter_dict(user_dict):
+    for k, v in user_dict.items():
+        if 'role' in user_dict.keys():
+            v = v.upper()
+        else:
+            v = v
+        print(user_dict)
+    
 
-print(dict)
+# print(user_1)
 
     # a. Dictionaries - create a function that takes in a dictionary which updates the "role" key value pair and makes it uppercase
 
@@ -55,8 +61,8 @@ user_3 = {
     "id": "74324"
     }
 
-
-alter_dict(user_1)
+user_dict = input("\nGreetings programs! Enter a dictionary (user_1, user_2, or user_3): ")
+alter_dict(user_dict)
 
     # b. Dictionaries - Run the functions (3 times for each user!)
 
@@ -67,12 +73,14 @@ instructor_list = [user_1, user_2, user_3]
     # checks if the each user's role is equal to "INSTRUCTOR". 
     # if it is the same, print VALID else print INVALID (try to use a loop here!)
 def role_validation(instructor_list):
-    user_role =[print("VALID") if role == 'INSTRUCTOR' else print("INVALID")]
+    for user in instructor_list:
+        user_role = [print("VALID") if 'Instructor' in user.values() else print("INVALID")]
+        print(user_role)
 
 # role_check(instructor_list)
 
     # d. import the random module and update the function to re-assign the id of each user
-import random
+
     # e. don't forget to run it!
     
 # 3. Explicit Functions

@@ -8,18 +8,22 @@ def print_greeting():
     print(greetings)
 
 # run it here!
-salutations = print_greeting()
+# salutations = print_greeting()
+# you are suppposed to do the following:
+
+print(print_greeting())
+# this will return 'None' as it is an implicit return
 
     # b. Convert this implicit return function to an explicit return function!
 
 def return_greeting():
     greetings = "salutations"
     # CHANGE LINE BELOW
-    return(greetings)
+    return(greetings) # this is an explicit return so we can use it later by calling the fcn again
     # CHANGE LINE ABOVE
 
     # c. Run the newly printed code! (Examine NOTHING is printed to the terminal!)
-
+return_greeting()
 # run it here!
 print(return_greeting())
 
@@ -58,3 +62,10 @@ print(my_greeting)
 
 
 # # printing a value is not the same as returning a value
+
+
+import math
+math. # call the fcn and add a dot ( . ) and vscode will show you all
+# the other methods you can use that are associated with the main fcn
+
+

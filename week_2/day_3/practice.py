@@ -65,7 +65,7 @@ print(my_greeting)
 
 
 import math
-math. # call the fcn and add a dot ( . ) and vscode will show you all
+# "math."" # call the fcn and add a dot ( . ) and vscode will show you all
 # the other methods you can use that are associated with the main fcn
 
 

@@ -18,7 +18,7 @@ person_1 = {
 
 # add a key value pair to person_1 with the last_name of Doo
 person_1['last name'] = 'Doo'
-print(f"Updated the 'last_name' key of the 'person_1' dictionary: {person_1}\n")
+print(f"Added the 'last_name' key to the 'person_1' dictionary: {person_1}\n")
 
 # update person_1 favorite_snack to "Scooby Snacks"
 person_1['favorite_snack'] = 'Scooby Snacks'

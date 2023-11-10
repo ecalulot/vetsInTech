@@ -43,7 +43,7 @@ wb = Workbook()
 ws = wb.active
 
 # loop through the range of 1-10 and for each number in the range
-for num in range(1, 10):
+for num in range(1, 10): # figured we'd want range to 11 since we're using lists of 10 values
     assign_names(num)
     
 # - call/invoke the assign_names function while passing in the number as the 'row' argument

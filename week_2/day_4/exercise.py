@@ -27,16 +27,7 @@ for k, v in inventory.items():
 # 2. Implicit Functions 
 # (When we work with global variables/objects and don't return anything, 
 # these functions are implicit return functions!)
-def alter_dict(user_dict):
-    for k, v in user_dict.items():
-        if 'role' in user_dict.keys():
-            v = v.upper()
-        else:
-            v = v
-        print(user_dict)
-    
-
-# print(user_1)
+   
 
     # a. Dictionaries - create a function that takes in a dictionary which updates the "role" key value pair and makes it uppercase
 
@@ -61,9 +52,19 @@ user_3 = {
     "id": "74324"
     }
 
-user_dict = input("\nGreetings programs! Enter a dictionary (user_1, user_2, or user_3): ")
-alter_dict(user_dict)
 
+def alter_dict(user_dict):
+    for k, v in user_dict.items():
+        if 'role' in user_dict.keys():
+            user_dict['role']= 'INSTRUCTOR'
+        else:
+            v = v
+            
+    return(user_dict)
+
+# user_dict = input("\nGreetings programs! Enter a dictionary (user_1, user_2, or user_3): ")
+alter_dict(user_3)
+print(alter_dict)
     # b. Dictionaries - Run the functions (3 times for each user!)
 
 instructor_list = [user_1, user_2, user_3]
@@ -80,7 +81,10 @@ def role_validation(instructor_list):
 # role_check(instructor_list)
 
     # d. import the random module and update the function to re-assign the id of each user
-
+for uv in user_2.values():
+    if 'id' in user_2.keys():
+        user_2["id"] = str(random.randint(10_000, 99_999))
+        print(uv)
     # e. don't forget to run it!
     
 # 3. Explicit Functions

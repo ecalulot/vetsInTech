@@ -52,19 +52,19 @@ user_3 = {
     "id": "74324"
     }
 
-
 def alter_dict(user_dict):
     for k, v in user_dict.items():
         if 'role' in user_dict.keys():
+            # user_dict['role']: str = v.upper()
             user_dict['role']= 'INSTRUCTOR'
         else:
             v = v
-            
-    return(user_dict)
-
+    print(f"\nThe updated dictionary: {user_dict}\n")
+    print(f"The memory address of 'user_dict' is: {id(user_dict)}.\n") # id prints memory address
+    
 # user_dict = input("\nGreetings programs! Enter a dictionary (user_1, user_2, or user_3): ")
 alter_dict(user_3)
-print(alter_dict)
+# print(alter_dict)
     # b. Dictionaries - Run the functions (3 times for each user!)
 
 instructor_list = [user_1, user_2, user_3]
@@ -75,16 +75,16 @@ instructor_list = [user_1, user_2, user_3]
     # if it is the same, print VALID else print INVALID (try to use a loop here!)
 def role_validation(instructor_list):
     for user in instructor_list:
-        user_role = [print("VALID") if 'Instructor' in user.values() else print("INVALID")]
+        user_role = [print("VALID") if 'INSTRUCTOR' in user.values() else print("INVALID")]
         print(user_role)
 
 # role_check(instructor_list)
 
     # d. import the random module and update the function to re-assign the id of each user
-for uv in user_2.values():
+for uval in user_2.values():
     if 'id' in user_2.keys():
         user_2["id"] = str(random.randint(10_000, 99_999))
-        print(uv)
+        print(uval)
     # e. don't forget to run it!
     
 # 3. Explicit Functions

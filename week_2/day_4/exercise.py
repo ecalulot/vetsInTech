@@ -15,7 +15,7 @@ inventory = {
 # for item in inventory:
     # decrement item by using an assignment operator
 for k, v in inventory.items():
-    if v <= 0: # for case of 0 in inventory
+    if v <= 0: # for the case of nothing in stock to sell
         print(k, v)
     else: 
         v -= 1
@@ -70,7 +70,7 @@ alter_dict(user_2)
 # alter_dict(user_1)
 
 instructor_list = [user_1, user_2, user_3]
-print(instructor_list)
+# print(instructor_list)
 print(f"The length of 'instructor_list is: {len(instructor_list)}\n")
 
     # c. List - create a function that takes in the list and 

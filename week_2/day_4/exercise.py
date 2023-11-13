@@ -55,8 +55,11 @@ user_3 = {
 def alter_dict(user_dict):
     for k, v in user_dict.items():
         if 'role' in user_dict.keys():
-            # user_dict['role']: str = v.upper()
-            user_dict['role'] = 'INSTRUCTOR'
+            # role_val = user_dict.get('role')
+            # user_dict['role']  = v.upper()
+
+            # user_dict['role'] = 'INSTRUCTOR'
+            user_dict.update({'role': 'INSTRUCTOR'})
         else:
             v = v
     print(f"\nThe updated dictionary: {user_dict}\n")
@@ -67,7 +70,7 @@ def alter_dict(user_dict):
     # b. Dictionaries - Run the functions (3 times for each user!)
 alter_dict(user_3)
 alter_dict(user_2)
-# alter_dict(user_1)
+# alter_dict(user_1) # to test "INVALID"
 
 instructor_list = [user_1, user_2, user_3]
 # print(instructor_list)
@@ -86,22 +89,26 @@ role_validation(instructor_list)
 
 
     # d. import the random module and update the function to re-assign the id of each user
-for entry in len(instructor_list):
-    for instructor_list[entry] in instructor_list:
-        if instructor_list[entry] in instructor_list[entry].values():
-            instructor_list[entry]['id'] = str(random.randint(10_000, 99_999))
-            print(instructor_list)
-    
-
-    # for uval in user_2.values():
-    # if 'id' in user_2.keys():
-        # user_2["id"] = str(random.randint(10_000, 99_999))
-        # print(uval)
+for user in (instructor_list):
+    for k, v in user.items():
+        if 'id' in k:
+            user['id'] = str(random.randint(10_000, 99_999))
+            print(f"{user['firstName']} receives the following new 'id': {user['id']}")
+ 
     # e. don't forget to run it!
     
 # 3. Explicit Functions
 user_info = [46453, "Devin", "Smith"]
     # Each element by index of user_info follows the format of: id, first_name, last_name
+def create_dict(user_list):
+    user_dict = dict() # or {} works too
+    user_dict['id'] = user_info[0]
+    user_dict['first_name'] = user_info[1]
+    user_dict['last_name'] = user_info[2]
+    return(user_dict)
+
+make_user_dict = create_dict(user_info)
+print(f"\nThe new user dictionary is {make_user_dict}\n")
 
     # Create a function with a parameter user_list
     #   - return a dictionary with the follow key value pairs:

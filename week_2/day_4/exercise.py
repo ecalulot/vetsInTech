@@ -56,19 +56,22 @@ def alter_dict(user_dict):
     for k, v in user_dict.items():
         if 'role' in user_dict.keys():
             # user_dict['role']: str = v.upper()
-            user_dict['role']= 'INSTRUCTOR'
+            user_dict['role'] = 'INSTRUCTOR'
         else:
             v = v
     print(f"\nThe updated dictionary: {user_dict}\n")
     print(f"The memory address of 'user_dict' is: {id(user_dict)}.\n") # id prints memory address
     
 # user_dict = input("\nGreetings programs! Enter a dictionary (user_1, user_2, or user_3): ")
-alter_dict(user_3)
-# print(alter_dict)
+
     # b. Dictionaries - Run the functions (3 times for each user!)
+alter_dict(user_3)
+alter_dict(user_2)
+alter_dict(user_1)
 
 instructor_list = [user_1, user_2, user_3]
-# print(instructor_list)
+print(instructor_list)
+print(f"The length of 'instructor_list is: {len(instructor_list)}\n")
 
     # c. List - create a function that takes in the list and 
     # checks if the each user's role is equal to "INSTRUCTOR". 
@@ -81,10 +84,17 @@ def role_validation(instructor_list):
 # role_check(instructor_list)
 
     # d. import the random module and update the function to re-assign the id of each user
-for uval in user_2.values():
-    if 'id' in user_2.keys():
-        user_2["id"] = str(random.randint(10_000, 99_999))
-        print(uval)
+for entry in len(instructor_list):
+    for instructor_list[entry] in instructor_list:
+        if instructor_list[entry] in instructor_list[entry].values():
+            instructor_list[entry]['id'] = str(random.randint(10_000, 99_999))
+            print(instructor_list)
+    
+
+    # for uval in user_2.values():
+    # if 'id' in user_2.keys():
+        # user_2["id"] = str(random.randint(10_000, 99_999))
+        # print(uval)
     # e. don't forget to run it!
     
 # 3. Explicit Functions

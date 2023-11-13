@@ -67,7 +67,7 @@ def alter_dict(user_dict):
     # b. Dictionaries - Run the functions (3 times for each user!)
 alter_dict(user_3)
 alter_dict(user_2)
-alter_dict(user_1)
+# alter_dict(user_1)
 
 instructor_list = [user_1, user_2, user_3]
 print(instructor_list)
@@ -78,10 +78,12 @@ print(f"The length of 'instructor_list is: {len(instructor_list)}\n")
     # if it is the same, print VALID else print INVALID (try to use a loop here!)
 def role_validation(instructor_list):
     for user in instructor_list:
-        user_role = [print("VALID") if 'INSTRUCTOR' in user.values() else print("INVALID")]
-        print(user_role)
+        user_role = [print(f"VALID for {user['firstName']}.\n") if 'INSTRUCTOR' in user.values() else print(f"INVALID for {user['firstName']}.\n")]
+        # print(user_role)
 
 # role_check(instructor_list)
+role_validation(instructor_list)
+
 
     # d. import the random module and update the function to re-assign the id of each user
 for entry in len(instructor_list):

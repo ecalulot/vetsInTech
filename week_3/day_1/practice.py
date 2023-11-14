@@ -29,7 +29,7 @@ weedle = {
 }
 
 # call the function with weedle!
-
+def pokemon_fcn(weedle):
 
 # wb.save('./spreadsheets/practice.xlsx')
 # absolute path

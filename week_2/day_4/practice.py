@@ -20,6 +20,8 @@ person_1 = {
 person_1['last name'] = 'Doo'
 print(f"Added the 'last_name' key to the 'person_1' dictionary: {person_1}\n")
 
+# person_1.update({"last_name": "Doo"}) this is another way
+
 # update person_1 favorite_snack to "Scooby Snacks"
 person_1['favorite_snack'] = 'Scooby Snacks'
 print(f"Altered the 'favorite_snack' key. The new dictionary is: {person_1}\n")
@@ -28,7 +30,7 @@ print(f"Altered the 'favorite_snack' key. The new dictionary is: {person_1}\n")
 del person_1["wears_glasses"]
 print(f"Removing 'wears_glasses' key from dictionary. {person_1}\n")
 
-
+# person_1.pop("wears glasses") this is another way
 
 your_car = {
   "brand": "Toyota",

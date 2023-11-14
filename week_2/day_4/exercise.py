@@ -55,22 +55,20 @@ user_3 = {
 def alter_dict(user_dict):
     for k, v in user_dict.items():
         if 'role' in user_dict.keys():
-            # role_val = user_dict.get('role')
-            # user_dict['role']  = v.upper()
-
-            # user_dict['role'] = 'INSTRUCTOR'
-            user_dict.update({'role': 'INSTRUCTOR'})
+            user_dict['role']  = user_dict['role'].upper()
+            
+            # user_dict.update({'role': 'INSTRUCTOR'})
         else:
             v = v
     print(f"\nThe updated dictionary: {user_dict}\n")
-    print(f"The memory address of 'user_dict' is: {id(user_dict)}.\n") # id prints memory address
+    # print(f"The memory address of 'user_dict' is: {id(user_dict)}.\n") # id prints memory address
     
 # user_dict = input("\nGreetings programs! Enter a dictionary (user_1, user_2, or user_3): ")
 
     # b. Dictionaries - Run the functions (3 times for each user!)
 alter_dict(user_3)
 alter_dict(user_2)
-# alter_dict(user_1) # to test "INVALID"
+# alter_dict(user_1) # to test "INVALID" further in the code
 
 instructor_list = [user_1, user_2, user_3]
 # print(instructor_list)
@@ -92,7 +90,7 @@ role_validation(instructor_list)
 for user in (instructor_list):
     for k, v in user.items():
         if 'id' in k:
-            user['id'] = str(random.randint(10_000, 99_999))
+            user['id'] = random.randint(10_000, 99_999)
             print(f"{user['firstName']} receives the following new 'id': {user['id']}")
  
     # e. don't forget to run it!

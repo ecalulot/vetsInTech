@@ -27,3 +27,16 @@ print(f"Altered the 'favorite_snack' key. The new dictionary is: {person_1}\n")
 # Remove the "wears_glasses" key:value from person_1
 del person_1["wears_glasses"]
 print(f"Removing 'wears_glasses' key from dictionary. {person_1}\n")
+
+
+
+your_car = {
+  "brand": "Toyota",
+  "model": "Prius",
+  "electric": True,
+  "year": 2012,
+  "colors": ["red", "white", "blue"]
+}
+
+your_car_brand = your_car.get('colors')[2]
+print(your_car_brand)

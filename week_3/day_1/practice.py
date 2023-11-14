@@ -15,15 +15,11 @@ clefairy = {
     "height": 6,
     "order": 56,
     "weight": 75,
-}
-counter = 0 # initialize the counter
-for num in range(1, len(clefairy)):
-    ws.cell(row=1, column=num , value=clefairy['id'])
-    ws.cell(row=1, column=num , value=clefairy['name'])
-    ws.cell(row=1, column=num , value=clefairy['base_experience'])
-    ws.cell(row=1, column=num , value=clefairy['height'])
-    ws.cell(row=1, column=num , value=clefairy['order'])
-    ws.cell(row=1, column=num , value=clefairy['weight'])
+    }
+
+print(len(clefairy))
+for num in range(1, len(clefairy.keys())+1):
+    ws.cell(row=1, column=num , value=list(clefairy.values())[num-1]) # [num-1] is to start at index 0 when we convert clefairy into a list
 
 # create a function that takes in a pokemon
 weedle = {
@@ -33,15 +29,14 @@ weedle = {
     "height": 3,
     "order": 17,
     "weight": 32
-}
+    }
 
 # call the function with weedle!
 def pokemon_fcn(weedle):
-    ws.cell(row=1, column=1, value=weedle['id'])
-    ws.cell(row=1, column=2, value=weedle['name'])
-    pass
-
-#
+    for col in range(1, len(weedle.keys())+1):
+        ws.cell(row=2, column=col, value=list(weedle.values())[col-1])
+     
+pokemon_fcn(weedle)
 # wb.save('./spreadsheets/practice.xlsx')
 # absolute path
 wb.save('/home/ra11y/Downloads/local.source/vetsInTech/week_3/spreadsheets/w3_d1_practice.xlsx')

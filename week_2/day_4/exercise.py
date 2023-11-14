@@ -64,6 +64,7 @@ def alter_dict(user_dict):
     # print(f"The memory address of 'user_dict' is: {id(user_dict)}.\n") # id prints memory address
     
 # user_dict = input("\nGreetings programs! Enter a dictionary (user_1, user_2, or user_3): ")
+# user_dict_typecast = dict(user_dict) # think i need to type cast to make line 66 work properly 
 
     # b. Dictionaries - Run the functions (3 times for each user!)
 alter_dict(user_3)

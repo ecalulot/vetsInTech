@@ -17,9 +17,9 @@ clefairy = {
     "weight": 75,
     }
 
-print(len(clefairy))
+# print(len(clefairy))
 for num in range(1, len(clefairy.keys())+1):
-    ws.cell(row=1, column=num , value=list(clefairy.values())[num-1]) # [num-1] is to start at index 0 when we convert clefairy into a list
+    ws.cell(row=1, column=num , value=list(clefairy.values())[num-1]) # [num-1] is to start at index 0 when we convert the clefairy dictionary into a list. 
 
 # create a function that takes in a pokemon
 weedle = {
@@ -28,7 +28,7 @@ weedle = {
     "base_experience": 39,
     "height": 3,
     "order": 17,
-    "weight": 32
+    "weight": 32,
     }
 
 # call the function with weedle!

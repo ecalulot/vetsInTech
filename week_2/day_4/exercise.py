@@ -74,7 +74,7 @@ alter_dict(user_2)
 
 instructor_list = [user_1, user_2, user_3]
 # print(instructor_list)
-print(f"The length of 'instructor_list is: {len(instructor_list)}\n")
+# print(f"The length of 'instructor_list is: {len(instructor_list)}\n")
 
     # c. List - create a function that takes in the list and 
     # checks if the each user's role is equal to "INSTRUCTOR". 
@@ -101,14 +101,14 @@ for user in (instructor_list):
 user_info = [46453, "Devin", "Smith"]
     # Each element by index of user_info follows the format of: id, first_name, last_name
 def create_dict(user_list):
-    user_dict = dict() # or {} works too
+    user_dict = dict() # initialize an empty dictionary or {} works too
     user_dict['id'] = user_info[0]
     user_dict['first_name'] = user_info[1]
     user_dict['last_name'] = user_info[2]
     return(user_dict)
 
 make_user_dict = create_dict(user_info)
-print(f"\nThe new user dictionary is {make_user_dict}\n")
+print(f"\nThe newly created user dictionary is {make_user_dict}\n")
 
     # Create a function with a parameter user_list
     #   - return a dictionary with the follow key value pairs:

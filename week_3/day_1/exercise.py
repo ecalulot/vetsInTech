@@ -10,18 +10,18 @@ users_list = ["Alex", "Bob", "Charlie", "Dexter", "Edgar", "Frank", "Gary"]
 
 # example output    
 # [{"user_id": 0, "name": "Alex"}, etc, etc]
-make_list = []
+
 list_to_dict = {}
-for user in range(len(users_list) + 1):
-    # make_list = []
-    # make_list[user] = list_to_dict
-    pass
-    for id, name in enumerate(users_list):
-        # list_to_dict = {}
-        list_to_dict['user_id'] = id
-        list_to_dict['name'] = name
-        print(list_to_dict)
-    
+for id, name in enumerate(users_list):
+    list_to_dict[id] = name # use id as the key and set it to the value of name as we enumerate
+
+print(list_to_dict) # strictly a single dictionary with 6 entries
+
+print(type(list_to_dict))
+list_to_dict_compreh = {k:v for (k,v) in enumerate(users_list)}
+print(list_to_dict_compreh)
+print(type(list_to_dict_compreh))
+
 # # 1a. Create a function that takes a single string value and returns the desired dictionary
 # def desired_dict(users_input):
 #     request_dict = dict(input("Enter dictionary in question: "))
@@ -32,7 +32,7 @@ users_dict_list = []
 # 1c. Loop through users_list that calls the function for each item and appends the return value to users_dict_list
 # for user in users_list:
 #     desired_dict(user)
-    # users_dict_list.append(???)
+    # users_dict_list.append(request_dict)
 
 
 

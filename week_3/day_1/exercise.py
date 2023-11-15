@@ -11,16 +11,23 @@ users_list = ["Alex", "Bob", "Charlie", "Dexter", "Edgar", "Frank", "Gary"]
 # example output    
 # [{"user_id": 0, "name": "Alex"}, etc, etc]
 
-list_to_dict = {}
-for id, name in enumerate(users_list):
-    list_to_dict[id] = name # use id as the key and set it to the value of name as we enumerate
+# # list_to_dict = [{}]
+# list_to_dict = {}
+# for id, name in enumerate(users_list):
+    # list_to_dict[id] = name # use 'id' as the key and set it to the value of 'name' as we enumerate
+#     list_to_dict['user_id'] = id
+#     list_to_dict['name'] = name
+# print(list_to_dict) # strictly a single dictionary with 6 entries
 
-print(list_to_dict) # strictly a single dictionary with 6 entries
 
-print(type(list_to_dict))
-list_to_dict_compreh = {k:v for (k,v) in enumerate(users_list)}
-print(list_to_dict_compreh)
-print(type(list_to_dict_compreh))
+proper = [{k:v} for k,v in enumerate(users_list)]
+print(proper)
+
+
+# print(type(list_to_dict))
+# list_to_dict_compreh = {k:v for (k,v) in enumerate(users_list)}
+# print(list_to_dict_compreh)
+# print(type(list_to_dict_compreh))
 
 # # 1a. Create a function that takes a single string value and returns the desired dictionary
 # def desired_dict(users_input):
@@ -35,7 +42,7 @@ users_dict_list = []
     # users_dict_list.append(request_dict)
 
 
-
+print()
 # 2. Prompt: Given a series of dictionaries and desired output (mock_data.py), can you provide the correct commands?
 from mock_data import mock_data
 # 2a. retrieve the gender of Morty Smith

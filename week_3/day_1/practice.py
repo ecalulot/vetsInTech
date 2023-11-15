@@ -32,11 +32,11 @@ weedle = {
     }
 
 # call the function with weedle!
-def pokemon_fcn(weedle):
+def get_pokemon(weedle):
     for col in range(1, len(weedle.keys())+1):
         ws.cell(row=2, column=col, value=list(weedle.values())[col-1])
      
-pokemon_fcn(weedle)
+get_pokemon(weedle)
 # wb.save('./spreadsheets/practice.xlsx')
 # absolute path
 wb.save('/home/ra11y/Downloads/local.source/vetsInTech/week_3/spreadsheets/w3_d1_practice.xlsx')

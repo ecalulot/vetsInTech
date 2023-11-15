@@ -18,16 +18,14 @@ users_list = ["Alex", "Bob", "Charlie", "Dexter", "Edgar", "Frank", "Gary"]
 #     list_to_dict['user_id'] = id
 #     list_to_dict['name'] = name
 # print(list_to_dict) # strictly a single dictionary with 6 entries
+# proper = [{k:v} for k,v in enumerate(users_list)]
+# FOUND SO MANY OTHER WAYS THIS WAS NOT WORKING AND TESTED - TOO MANY TO KEEP HERE
 
 
-proper = [{k:v} for k,v in enumerate(users_list)]
-print(proper)
+# Properly done
+list_to_dict = [{'user_id':k, 'name':v} for k,v in enumerate(users_list)]
+print(list_to_dict)
 
-
-# print(type(list_to_dict))
-# list_to_dict_compreh = {k:v for (k,v) in enumerate(users_list)}
-# print(list_to_dict_compreh)
-# print(type(list_to_dict_compreh))
 
 # # 1a. Create a function that takes a single string value and returns the desired dictionary
 # def desired_dict(users_input):

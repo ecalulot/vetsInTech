@@ -40,7 +40,7 @@ for id, user in enumerate(users_list):
     # desired_dict(user==id)
     users_dict_list.append(desired_dict(user==id))
     # list_entry.insert(id, list_entry)
-    print(users_dict_list)
+print(users_dict_list)
     # print(list_entry)
 
 

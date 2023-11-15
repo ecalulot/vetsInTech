@@ -1,13 +1,14 @@
 # ITP Week 3 Day 3 Practice
 
 # import in the two modules for making API calls and parsing the data
+import requests
 
 # Using our API call from the exercise yesterday (this is provided for you):
 
 # UNCOMMENT BELOW AFTER YOUR IMPORTS
-# url = "https://rickandmortyapi.com/api/character"
-# response = requests.get(url)
-# json_data = response.text
+url = "https://rickandmortyapi.com/api/character"
+response = requests.get(url)
+json_data = response.text
 # data = json.loads(json_data)
 
 # print it out to see how the data looks initially:

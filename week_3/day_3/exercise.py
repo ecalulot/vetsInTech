@@ -14,6 +14,7 @@ from openpyxl import Workbook, load_workbook
 # character_url = "https://rickandmortyapi.com/api/character"
 # set up a workbook and worksheet titled "Rick and Morty Characters"
 wb = Workbook()
+ws.active
 ws.title = "Rick and Morty Characters"
 
 # # assign a variable 'data' with the returned GET request

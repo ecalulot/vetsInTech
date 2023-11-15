@@ -30,7 +30,7 @@ def desired_dict(users_input):
     return(list_to_dict[users_input])
 
 request_dict = int(input("\nEnter dictionary index to retrieve (0 - 6): "))
-print(f"\nYou requested the following dictionary: {desired_dict(request_dict)}")
+print(f"\nYou requested the following dictionary: {desired_dict(request_dict)}\n")
 
 
 # 1b. Create a new empty list called users_dict_list
@@ -49,7 +49,7 @@ from mock_data import mock_data
 # 2a. retrieve the gender of Morty Smith
 # print(mock_data['results'][1]['name']) # sanity check to test if I am in the correct dictionary and index
 gender = mock_data['results'][1]['gender']
-print(f"Morty is a {gender}.")
+print(f"\nMorty is a {gender}.")
 # 2b. retrieve the length of the Rick Sanchez episodes
 num_episodes = len(mock_data['results'][0]['episode'])
 print(f"Rick has been in {num_episodes} episodes thus far.")

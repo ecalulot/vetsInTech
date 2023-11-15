@@ -36,12 +36,12 @@ print(f"\nYou requested the following dictionary: {desired_dict(request_dict)}")
 # 1b. Create a new empty list called users_dict_list
 users_dict_list = []
 # 1c. Loop through users_list that calls the function for each item and appends the return value to users_dict_list
-# for user in users_list:
-#     desired_dict(user)
-#     users_dict_list.append(request_dict)
+for user in users_list:
+    list_entry = desired_dict.value(user)
+    list_entry.append(users_dict_list)
 
 
-print()
+print(users_dict_list)
 # 2. Prompt: Given a series of dictionaries and desired output (mock_data.py), can you provide the correct commands?
 from mock_data import mock_data
 # 2a. retrieve the gender of Morty Smith

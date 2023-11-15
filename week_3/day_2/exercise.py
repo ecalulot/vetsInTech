@@ -3,8 +3,10 @@
 # import in the two modules for making API calls and parsing the data
 
 # set a url variable to "https://rickandmortyapi.com/api/character"
+url = "https://rickandmortyapi.com/api/character"
 
 # set a variable response to the "get" request of the url
+get_resp = ''
 
 # print to verify we have a status code of 200
 

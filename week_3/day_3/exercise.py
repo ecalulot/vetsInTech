@@ -8,15 +8,18 @@
 # EASY MODE
 
 # import the appropriate modules (you have 3)
+from openpyxl import Workbook, load_workbook
+
 
 # character_url = "https://rickandmortyapi.com/api/character"
 # set up a workbook and worksheet titled "Rick and Morty Characters"
-
+wb = Workbook()
+ws.title = "Rick and Morty Characters"
 
 # # assign a variable 'data' with the returned GET request
-
+get = ''
 # create the appropriate headers in openpyxl for all of the keys for a single character
-
+ws.cell(row=1, column=SOMECHARS.keys())
 # loop through all of the 'results' of the data to populate the rows and columns for each character
 
 # NOTE: due to the headers, the rows need to be offset by one!
@@ -24,6 +27,8 @@
 # MEDIUM MODE
 
 # create 2 new worksheets for "Rick and Morty Locations" and "Rick and Morty Episodes"
+ws.title = "Rick and Morty Locations"
+ws.title = "Rick and Morty Episodes"
 
 # create 2 new variables for episode_url and location_url (retrieve it from the docs!)
 # "https://rickandmortyapi.com/api/location"

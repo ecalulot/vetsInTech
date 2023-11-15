@@ -10,17 +10,18 @@ users_list = ["Alex", "Bob", "Charlie", "Dexter", "Edgar", "Frank", "Gary"]
 
 # example output    
 # [{"user_id": 0, "name": "Alex"}, etc, etc]
-# users_dict = {}
-def list_of_dict(list_of_names):
-    for id, user in enumerate(users_list):
-        return [
-            {'user_id': id, 'name': user },
-    #   {'user_id': id, 'name': user }
-    ]
-    print(id, user)
-
-print(enumerate(users_list))
-
+make_list = []
+list_to_dict = {}
+for user in range(len(users_list) + 1):
+    # make_list = []
+    # make_list[user] = list_to_dict
+    pass
+    for id, name in enumerate(users_list):
+        # list_to_dict = {}
+        list_to_dict['user_id'] = id
+        list_to_dict['name'] = name
+        print(list_to_dict)
+    
 # # 1a. Create a function that takes a single string value and returns the desired dictionary
 # def desired_dict(users_input):
 #     request_dict = dict(input("Enter dictionary in question: "))
@@ -32,17 +33,20 @@ users_dict_list = []
 # for user in users_list:
 #     desired_dict(user)
     # users_dict_list.append(???)
+
+
+
 # 2. Prompt: Given a series of dictionaries and desired output (mock_data.py), can you provide the correct commands?
 from mock_data import mock_data
 # 2a. retrieve the gender of Morty Smith
-print(mock_data['results'][1]['name']) # test if I am in the correct dictionary and index
+# print(mock_data['results'][1]['name']) # sanity check to test if I am in the correct dictionary and index
 gender = mock_data['results'][1]['gender']
 print(f"Morty is a {gender}.")
 # 2b. retrieve the length of the Rick Sanchez episodes
 num_episodes = len(mock_data['results'][0]['episode'])
 print(f"Rick has been in {num_episodes} episodes thus far.")
-num_episodes_summer = len(mock_data['results'][2]['episode'])
-print(num_episodes_summer)
+# num_episodes_summer = len(mock_data['results'][2]['episode'])
+# print(num_episodes_summer)
 # 2c. retrieve the url of Summer Smith location
 where_summer = mock_data['results'][2]['location']['url']
 print(f"Summer is at {where_summer}")

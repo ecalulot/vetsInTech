@@ -19,24 +19,20 @@ users_list = ["Alex", "Bob", "Charlie", "Dexter", "Edgar", "Frank", "Gary"]
 #     list_to_dict['name'] = name
 # print(list_to_dict) # strictly a single dictionary with 6 entries
 # proper = [{k:v} for k,v in enumerate(users_list)]
-# FOUND SO MANY OTHER WAYS THIS WAS NOT WORKING AND TESTED - TOO MANY TO KEEP HERE
-
+# FOUND SO MANY OTHER WAYS THIS WAS NOT WORKING AND TESTED - TOO MANY TO KEEP HERE FOR FUTURE REFERENCE
 
 # Properly done
 list_to_dict = [{'user_id':k, 'name':v} for k,v in enumerate(users_list)]
 print(list_to_dict)
 
-
 # # 1a. Create a function that takes a single string value and returns the desired dictionary
 def desired_dict(users_input):
-    # request_dict = int(input("Enter dictionary index to retrieve (0 - 6): "))
-    # print(list_to_dict[users_input]) 
     return(list_to_dict[users_input])
 
+request_dict = int(input("\nEnter dictionary index to retrieve (0 - 6): "))
+print(f"\nYou requested the following dictionary: {desired_dict(request_dict)}")
 
 
-
-print(f"\nYou requested the following dictionary: {desired_dict(2)}")
 # 1b. Create a new empty list called users_dict_list
 users_dict_list = []
 # 1c. Loop through users_list that calls the function for each item and appends the return value to users_dict_list

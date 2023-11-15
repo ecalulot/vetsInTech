@@ -28,16 +28,21 @@ print(list_to_dict)
 
 
 # # 1a. Create a function that takes a single string value and returns the desired dictionary
-# def desired_dict(users_input):
-#     request_dict = dict(input("Enter dictionary in question: "))
-#     return(request_dict)
+def desired_dict(users_input):
+    # request_dict = int(input("Enter dictionary index to retrieve (0 - 6): "))
+    # print(list_to_dict[users_input]) 
+    return(list_to_dict[users_input])
 
+
+
+
+print(f"\nYou requested the following dictionary: {desired_dict(2)}")
 # 1b. Create a new empty list called users_dict_list
 users_dict_list = []
 # 1c. Loop through users_list that calls the function for each item and appends the return value to users_dict_list
 # for user in users_list:
 #     desired_dict(user)
-    # users_dict_list.append(request_dict)
+#     users_dict_list.append(request_dict)
 
 
 print()

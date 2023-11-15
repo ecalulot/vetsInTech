@@ -23,6 +23,13 @@ for k, v in inventory.items():
 
     # NOTE: recall that item represents the key of the key:value pair
 
+# if inventory[item] == 0:
+#    pass
+# elif inventory[item] > 0:
+#   inventory[item] - 1
+# 
+# another way to take into account the zero in inventory
+
 
 # 2. Implicit Functions 
 # (When we work with global variables/objects and don't return anything, 

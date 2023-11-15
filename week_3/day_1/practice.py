@@ -5,6 +5,7 @@ from openpyxl import Workbook, load_workbook
 # given the following items, using the methods we covered, write to openpyxl
 wb = Workbook()
 ws = wb.active
+# ws.title = 'Demo Worksheet'
 
 # use an external counter with just a for loop (no function)
 
@@ -19,7 +20,14 @@ clefairy = {
 
 # print(len(clefairy))
 for num in range(1, len(clefairy.keys())+1):
-    ws.cell(row=1, column=num , value=list(clefairy.values())[num-1]) # [num-1] is to start at index 0 when we convert the clefairy dictionary into a list. 
+    ws.cell(row=1, column=num, value=list(clefairy.values())[num-1])
+# [num-1] is to start at index 0 when we convert the clefairy dictionary into a list so we can iterate through it.
+
+# # using an external counter method
+# counter = 1
+# for key in clefairy:
+#     ws.cell(row=6, column=counter, value=clefairy[key] # we're not using the .key() method we are indexing it
+#     counter += 1
 
 # create a function that takes in a pokemon
 weedle = {

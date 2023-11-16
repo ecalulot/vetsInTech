@@ -58,3 +58,14 @@ print(f"Rick has been in {num_episodes} episodes thus far.")
 # 2c. retrieve the url of Summer Smith location
 where_summer = mock_data['results'][2]['location']['url']
 print(f"Summer is at {where_summer}")
+
+# instructors version
+# #def user_to_dict(name, user_id):
+# return {'user_id:user_id, "name":name'}
+
+# user_dict_list = []
+# for index, name in enumerate(users_list):
+#     user_dict = users_to_dict(name, index)
+#     users_dict_list.append(user_dict)
+
+# print(users_dict_list)

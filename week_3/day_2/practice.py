@@ -1,6 +1,7 @@
 # ITP Week 3 Day 2 Practice
 
 # 1. import the appropriate module
+import json
 
 json_1 = """
 {
@@ -13,8 +14,11 @@ json_1 = """
 """
 
 # 2. perform a deserialization of the above object
+decode_json_1 = json.loads(json_1)
 
 # 3. assign a new variable called url_1 to the value of the deserialized object's url
+url_1 = decode_json_1[json_1]['url']
+
 
 json_2="""
 [
@@ -36,5 +40,6 @@ json_2="""
 """
 
 # 4. deserialize and assign a variable url_2 with the second item's url
-
+decode_json_2 = json.loads(json_2)
+url_2 = decode_json_2[1]['url']
 

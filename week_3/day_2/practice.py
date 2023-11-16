@@ -15,9 +15,13 @@ json_1 = """
 
 # 2. perform a deserialization of the above object
 decode_json_1 = json.loads(json_1)
+print(decode_json_1)
+print(type(decode_json_1)) # <class dict> as opposed to json
+
 
 # 3. assign a new variable called url_1 to the value of the deserialized object's url
-url_1 = decode_json_1[json_1]['url']
+url_1 = decode_json_1['url']
+# should be url_1 = decode_jason['url']
 
 
 json_2="""
@@ -41,5 +45,7 @@ json_2="""
 
 # 4. deserialize and assign a variable url_2 with the second item's url
 decode_json_2 = json.loads(json_2)
-url_2 = decode_json_2['json_2'][1]['url']
-
+print(type(decode_json_2))
+url_2 = decode_json_2[1]['url']
+# probably should be decode_json_2[1]['url']
+print(url_2)

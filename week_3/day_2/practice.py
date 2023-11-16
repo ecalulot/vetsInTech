@@ -41,5 +41,5 @@ json_2="""
 
 # 4. deserialize and assign a variable url_2 with the second item's url
 decode_json_2 = json.loads(json_2)
-url_2 = decode_json_2[1]['url']
+url_2 = decode_json_2['json_2'][1]['url']
 

@@ -16,8 +16,9 @@ print(response)
 json_data = response.json()
 
 # print to verify a crazy body of strings!
-posts = json.loads(json_data)
+
 
 # lets make it into a python dictionary by using the appropriate json method
+posts = json.loads(json_data)
 
 # print the newly created python object

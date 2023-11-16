@@ -22,4 +22,6 @@ print(json_data)
 posts = json.loads(json_data)
 
 # print the newly created python object
-print(posts)
+# print(posts)
+for post in posts:
+    print(post['title'])

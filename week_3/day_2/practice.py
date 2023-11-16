@@ -49,3 +49,15 @@ print(type(decode_json_2))
 url_2 = decode_json_2[1]['url']
 # probably should be decode_json_2[1]['url']
 print(url_2)
+
+
+
+# deserialization method does not require an import
+# data = response.json() # built-in to python
+# print(data)
+
+# for post in data:
+#     print(post['title'])
+
+# must deserialize (decode/read) before accessing it
+# get put post delete - these are the CRUD methods for requests

@@ -9,27 +9,29 @@ import requests, json
 url = "https://rickandmortyapi.com/api/character"
 response = requests.get(url)
 json_data = response.text
-data = json.loads(json_data)
+data = json.loads(json_data) #loads needs the file to be a str format
 
 # print it out to see how the data looks initially:
 print(type(data))
-print(data)
+print(data) 
 # Convert the very hard to read data back into JSON using json.dumps (store into a serialized_json variable):
-serialized_json = json.dumps({"???test":"???good"}) # see lecture notes
+serialized_json = json.dumps(data) # see lecture notes
+# json.dumps returns a json file? 
+
 # print the serialized_json
 print(type(serialized_json))
 print(serialized_json)
 # This doesn't look too different than our original print at a glance
 
 # Add some appropriate indents to make it more readable reassigning serialized_json:
-
+serialized_json = json.dumps(data, indent = 4)
 # uncomment below to see the changes!
 print(serialized_json)
 
 # This makes it look a lot more readable
 
 # Now change all of the separators from (,  :)  into (:  =>) reassigning serialized_json
-
+serialized_json = json.dumps(data, indent=4, separators=(": ", "=>"))
 # uncomment below to see the changes!
 print(serialized_json)
 
@@ -37,9 +39,12 @@ print(serialized_json)
 # it can just give us a better looking separation of values.
 
 # Finally, sort the data alphabetically reassigning serialized_json:
-sort_json = sorted(serialized_json)
+serialized_json = json.dumps(data, indent=4, separators=(": ", "=>"), sort_keys=True)
 # uncomment below to see the changes!
 print(serialized_json)
 
 # Again, this one is just for you the programmer to be able to easily
 # sort through the data that you have gotten from the api alphabetically.
+
+
+# json.dumps takes a python object and turns it into a json object

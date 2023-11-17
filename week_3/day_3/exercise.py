@@ -14,27 +14,30 @@ import json, requests
 character_url = "https://rickandmortyapi.com/api/character"
 # set up a workbook and worksheet titled "Rick and Morty Characters"
 wb = Workbook()
-ws = wb.active
-ws.title = "Rick and Morty Characters"
+# ws = wb.active
+sheet1 = wb.active
+sheet1.title = "Rick and Morty Characters"
 
 # # assign a variable 'data' with the returned GET request
 data = requests.get(character_url)
 # create the appropriate headers in openpyxl for all of the keys for a single character
-ws.cell(row=1, column=SOMECHARS.keys())
+# ws.cell(row=1, column=SOMECHARS.keys())
 # loop through all of the 'results' of the data to populate the rows and columns for each character
-def character_data(url_data):
-    for col in range(1, len(data.keys())+1):
-        ws.cell(row=2, column=col, value=list(data.values())[col-1])
+# def character_data(url_data):
+#     for col in range(1, len(data.keys())+1):
+#         ws.cell(row=2, column=col, value=list(data.values())[col-1])
 
-character_data(data)
+# character_data(data)
 # NOTE: due to the headers, the rows need to be offset by one!
 
 # MEDIUM MODE
 
 # create 2 new worksheets for "Rick and Morty Locations" and "Rick and Morty Episodes"
-ws.title = "Rick and Morty Locations"
-ws.title = "Rick and Morty Episodes"
-
+sheet2 = wb['']
+sheet2.title = "Rick and Morty Locations"
+sheet3 = wb['']
+sheet3.title = "Rick and Morty Episodes"
+print(wb.sheetnames)
 # create 2 new variables for episode_url and location_url (retrieve it from the docs!)
 location_url = "https://rickandmortyapi.com/api/location"
 episode_url = "https://rickandmortyapi.com/api/episode"
@@ -60,5 +63,5 @@ data_episode = requests.get(episode_url)
 
 
 # wb.save("./spreadsheets/exercise.xlsx")
-wb.save("/home/ra11y/Downloads/local.source/vetsInTech/week_3/w3_d3_spreadsheets")
+wb.save("/home/ra11y/Downloads/local.source/vetsInTech/week_3/w3_d3_spreadsheets.xlsx")
 # absolute path

@@ -14,9 +14,8 @@ import json, requests
 character_url = "https://rickandmortyapi.com/api/character"
 # set up a workbook and worksheet titled "Rick and Morty Characters"
 wb = Workbook()
-# ws = wb.active
-sheet1 = wb.active
-sheet1.title = "Rick and Morty Characters"
+ws = wb.active
+sheet1 = wb.create_sheet(title="Rick and Morty Characters")
 
 # # assign a variable 'data' with the returned GET request
 data = requests.get(character_url)
@@ -33,10 +32,8 @@ data = requests.get(character_url)
 # MEDIUM MODE
 
 # create 2 new worksheets for "Rick and Morty Locations" and "Rick and Morty Episodes"
-sheet2 = wb['']
-sheet2.title = "Rick and Morty Locations"
-sheet3 = wb['']
-sheet3.title = "Rick and Morty Episodes"
+sheet2 = wb.create_sheet(title="Rick and Morty Locations")
+sheet3 = wb.create_sheet(title="Rick and Morty Episodes")
 print(wb.sheetnames)
 # create 2 new variables for episode_url and location_url (retrieve it from the docs!)
 location_url = "https://rickandmortyapi.com/api/location"

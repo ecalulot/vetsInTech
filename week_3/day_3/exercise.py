@@ -30,8 +30,8 @@ print(type(prettier_json))
 
 # create the appropriate headers in openpyxl for all of the keys for a single character
 for row, post in enumerate(character_data, 1):
-    # for column, post_vals in enumerate(post, 1):
-    ws.cell(row=1, column=row, value=post)
+    for column, post_vals in enumerate(post, 1):
+        ws.cell(row=1, column=row, value=post)
     
 # loop through all of the 'results' of the data to populate the rows and columns for each character
 # def character_data(url_data):

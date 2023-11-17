@@ -25,3 +25,12 @@ posts = json.loads(json_data)
 print(posts)
 # for post in posts:
 #     print(post['title'])
+
+
+# instructor's methodology'
+# response = requests.get(url)
+# print(type(response))
+# data = response.txt
+# data = response.json()
+# data = json.loads(data)
+# print(type(data))

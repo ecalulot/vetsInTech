@@ -25,11 +25,14 @@ print(type(character_data))
 # print(character_data)
 prettier_json = json.dumps(character_data, indent = 4)
 print(type(prettier_json))
-print(prettier_json)
+# print(prettier_json)
 
 
 # create the appropriate headers in openpyxl for all of the keys for a single character
-# ws.cell(row=1, column=SOMECHARS.keys())
+for row, post in enumerate(character_data, 1):
+    # for column, post_vals in enumerate(post, 1):
+    ws.cell(row=1, column=row, value=post)
+    
 # loop through all of the 'results' of the data to populate the rows and columns for each character
 # def character_data(url_data):
 #     for col in range(1, len(data.keys())+1):

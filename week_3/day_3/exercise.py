@@ -14,7 +14,7 @@ import json, requests
 character_url = "https://rickandmortyapi.com/api/character"
 # set up a workbook and worksheet titled "Rick and Morty Characters"
 wb = Workbook()
-ws.active
+ws = wb.active
 ws.title = "Rick and Morty Characters"
 
 # # assign a variable 'data' with the returned GET request
@@ -22,7 +22,11 @@ data = requests.get(character_url)
 # create the appropriate headers in openpyxl for all of the keys for a single character
 ws.cell(row=1, column=SOMECHARS.keys())
 # loop through all of the 'results' of the data to populate the rows and columns for each character
+def character_data(url_data):
+    for col in range(1, len(data.keys())+1):
+        ws.cell(row=2, column=col, value=list(data.values())[col-1])
 
+character_data(data)
 # NOTE: due to the headers, the rows need to be offset by one!
 
 # MEDIUM MODE
@@ -36,6 +40,8 @@ location_url = "https://rickandmortyapi.com/api/location"
 episode_url = "https://rickandmortyapi.com/api/episode"
 
 # populate the new worksheets appropriately with all of the data!
+data_location = requests.get(location_url)
+data_episode = requests.get(episode_url)
 
 # NOTE: don't forget your headers!
 
@@ -54,3 +60,5 @@ episode_url = "https://rickandmortyapi.com/api/episode"
 
 
 # wb.save("./spreadsheets/exercise.xlsx")
+wb.save("/home/ra11y/Downloads/local.source/vetsInTech/week_3/w3_d3_spreadsheets")
+# absolute path

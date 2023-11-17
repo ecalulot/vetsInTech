@@ -59,6 +59,5 @@ data_episode = requests.get(episode_url)
 # (contact instructors for office hours if stuck!)
 
 
-# wb.save("./spreadsheets/exercise.xlsx")
-wb.save("/home/ra11y/Downloads/local.source/vetsInTech/week_3/w3_d3_spreadsheets.xlsx")
-# absolute path
+wb.save("week_3/spreadsheets/w3_d3_exercise.xlsx")
+# relative path

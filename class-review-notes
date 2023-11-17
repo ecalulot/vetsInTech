@@ -1,0 +1,51 @@
+data types and data collections
+
+str int 
+lists dictionaries
+json
+api openpyxl
+
+python obj to json 
+json to str?
+str back to json? 
+
+define a function and then invoke a function
+explicit return vs implict return
+
+instantiate a function
+
+
+import openpyxl
+from openpyxl import Workbook
+
+wb = Workbook()
+ws = wb.active    this automatically actives the default worksheet
+
+# ws2 = wb.create_chartsheet("new title")
+ws3 = wb.create_sheet("new title")
+ws.title = "add title"
+
+wb.save("week3/spreadsheet/my_spreadsheet.xlsx")
+
+python dictionaries to json strings
+
+
+
+
+for exercise w3d3
+import requests
+
+if we do not import json
+
+we can use the .json() 
+
+everytime we pull data it isn't always a dictionary, it just has to be a python object such as a list
+
+for row, post in enumerate(data, 1): 	# the 1 is optional and it tell it to start at 1 rather than 0 normally
+    for column, post_value in enumerate(post.values(), 1):
+        ws.cell(row=row, column=column, value=str(post_value))
+wb.save("<my path to save the file>")
+
+
+
+

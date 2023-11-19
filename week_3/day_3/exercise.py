@@ -24,33 +24,16 @@ prep_data = data.text
 json_data = json.loads(prep_data) # converts json to python dictionary and/or lists
 print(f"'json_data' is of type: {type(json_data)}")
 # print(json_data)
+json_str= json.dumps(json_data, indent=4) # convert to json str obj to see structure of the data
+# print(json_str)
 
 # for k, v in json_data.items():
 #     print(k) # just the keys printed which are "info" and "results"
 #     print(v)
 
-# # create the appropriate headers in openpyxl for all of the keys for a single character
-# for row, post_vals in enumerate(json_to_py_dict, 1):
-#     # for row, post in enumerate(json_to_py_dict, 1):
-#     for column, post_vals in enumerate(post_vals.values(), 1):
-#         # ws.cell(row=1, column=row, value=post)
-#         ws.cell(row=row, column=column, value=str(post_vals))
-
-# GOING TO USE THE JSON_STR which is a json string format to see the difference\
-# with the two lines i know are working. 
-# for row, post in enumerate(json_str, 1):
-#     ws.cell(row=1, column=row, value=post)
-
-# def dict_walk(d):
-#     for k,v in d.items():
-#         if type(v) == dict:
-#             print(k)
-#             dict_walk(v)
-#         else:
-#             print(k, ': ', v)
-
-# dict_walk(json_data)
-
+# create the appropriate headers in openpyxl for all of the keys for a single character
+for row, post in enumerate(json_data, 1): # this creates the headers
+    ws.cell(row=1, column=row, value=post)
 
 # # THESE TWO LINES WORK (ORIGINAL 65+6)
 # for row, post in enumerate(json_data, 1):
@@ -60,15 +43,14 @@ print(f"'json_data' is of type: {type(json_data)}")
 #         ws.cell(row=row, column=column, value=json_data[column])
 # # WANT TO ADD THE ABOVE TWO TO THE FIRST TWO
 
+# for col, post_val in enumerate(post, 2):
+#     ws.cell(row=col, column=row, value=post)
 
+    # for column, post_vals in enumerate(post.values()):
+    #     ws.cell(row=row, column=column, value=post_vals)
+    # print(row, post)
+    # print(f"row type is {type(row)}, post type is {type(post)}")
 
-# THIS IS MY WORKING TESTING CODE
-for row, post in enumerate(json_data, 1):
-    # print(post)
-    for column, post_value in enumerate(post, 1):
-        ws.cell(row=1, column=row, value=post)
-        ws.cell(row=1, column=row, value=post)
-        ws.cell(row=row, column=column, value=str(post_value))
 # END THESE TWO LINES
     # for column, post_val in enumerate(post, 1):
     #     ws.cell(row=row, column=column, value=json_data[column])
@@ -77,8 +59,10 @@ for row, post in enumerate(json_data, 1):
 
 
 
-# loop through all of the 'results' of the data to populate the rows and columns for each character # def character_data(url_data): #     for col in range(1, len(data.keys())+1):
-#         ws.cell(row=2, column=col, value=list(data.values())[col-1])
+# loop through all of the 'results' of the data to populate the rows and columns for each character 
+def character_data(url_data): 
+    for col in range(1, len(data.keys())+1):
+        ws.cell(row=2, column=col, value=list(data.values())[col-1])
 
 # character_data(data) # NOTE: due to the headers, the rows need to be offset by one!
 # MEDIUM MODE

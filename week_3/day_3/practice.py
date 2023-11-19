@@ -16,7 +16,7 @@ print(type(data))
 print(data) 
 # Convert the very hard to read data back into JSON using json.dumps (store into a serialized_json variable):
 serialized_json = json.dumps(data) # see lecture notes
-# json.dumps returns a json file? 
+# json.dumps returns a json string object
 
 # print the serialized_json
 print(type(serialized_json))

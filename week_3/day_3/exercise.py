@@ -25,12 +25,9 @@ json_data = json.loads(prep_data) # converts json to python dictionary and/or li
 print(f"'json_data' is of type: {type(json_data)}")
 # print(json_data)
 
-
-# print(json_data[info])
-# print(json_data.items())
-for k, v in json_data.items():
-    print(k) # just the keys printed which are "info" and "results"
-    print(v)
+# for k, v in json_data.items():
+#     print(k) # just the keys printed which are "info" and "results"
+#     print(v)
 
 # # create the appropriate headers in openpyxl for all of the keys for a single character
 # for row, post_vals in enumerate(json_to_py_dict, 1):
@@ -65,10 +62,13 @@ for k, v in json_data.items():
 
 
 
-
-# THESE TWO LINES WORK 
+# THIS IS MY WORKING TESTING CODE
 for row, post in enumerate(json_data, 1):
-    ws.cell(row=1, column=row, value=post)
+    # print(post)
+    for column, post_value in enumerate(post, 1):
+        ws.cell(row=1, column=row, value=post)
+        ws.cell(row=1, column=row, value=post)
+        ws.cell(row=row, column=column, value=str(post_value))
 # END THESE TWO LINES
     # for column, post_val in enumerate(post, 1):
     #     ws.cell(row=row, column=column, value=json_data[column])

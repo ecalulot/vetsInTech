@@ -12,17 +12,17 @@ import requests, json
 
 # character_url = "https://rickandmortyapi.com/api/character"
 
-character_url = "https://rickandmortyapi.com/api/character/2" # for a single character
+character_url = "https://rickandmortyapi.com/api/character/6" # for a single character
 # set up a workbook and worksheet titled "Rick and Morty Characters"
 wb = Workbook()
 ws = wb.active
 ws.title = "Rick and Morty Characters"
 
 # # assign a variable 'data' with the returned GET request
-data = requests.get(character_url)
-print(data) # 200 if website is available
+url_data = requests.get(character_url)
+print(url_data) # 200 if website is available
 # print(type(data))
-prep_data = data.text
+prep_data = url_data.text
 json_data = json.loads(prep_data) # converts json to python dictionary and/or lists
 print(f"'json_data' is of type: {type(json_data)}")
 # print(json_data)
@@ -34,8 +34,25 @@ json_str= json.dumps(json_data, indent=4) # convert to json str obj to see struc
 #     print(v)
 
 # create the appropriate headers in openpyxl for all of the keys for a single character
-for col, post in enumerate(json_data, 1): # this creates the headers
+for col, post in enumerate(json_data, 1): # this creates the headers for a single character, url adjusted to get one character. 
     ws.cell(row=1, column=col, value=post)
+    for row, post_data in enumerate(json_data.items(), 1):
+        ws.cell(row=row, column=col, value=str(post_data))
+
+
+
+
+
+
+
+
+
+# def character_data(url_data): 
+#     for col in range(2, len(json_data.keys())+1):
+#         ws.cell(row=2, column=col, value=list(json_data.values())[col-1])
+
+
+# character_test = character_data(url_data)
 
 # # THESE TWO LINES WORK (ORIGINAL 65+6)
 # for row, post in enumerate(json_data, 1):

@@ -21,23 +21,16 @@ data = requests.get(character_url)
 print(data) # 200 if website is available
 # print(type(data))
 prep_data = data.text
-json_data = json.loads(prep_data)
-# json_to_py_dict = json.loads(data)
-# print(type(json_to_py_dict))
+json_data = json.loads(prep_data) # converts json to python dictionary and/or lists
 print(f"'json_data' is of type: {type(json_data)}")
 # print(json_data)
-json_str = json.dumps(json_data, indent=2)
-# print(json_str)
-print(f"\n'json_str' is of type: {type(json_str)}\n")
 
 
-# print(json_str[info])
 # print(json_data[info])
 # print(json_data.items())
-
-# print(json_to_py_dict)
-# prettier_json = json.dumps(json_to_py_dict, indent = 4)
-
+for k, v in json_data.items():
+    print(k) # just the keys printed which are "info" and "results"
+    print(v)
 
 # # create the appropriate headers in openpyxl for all of the keys for a single character
 # for row, post_vals in enumerate(json_to_py_dict, 1):

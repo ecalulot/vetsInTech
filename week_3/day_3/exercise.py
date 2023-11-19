@@ -51,6 +51,25 @@ print(f"\n'json_str' is of type: {type(json_str)}\n")
 # for row, post in enumerate(json_str, 1):
 #     ws.cell(row=1, column=row, value=post)
 
+# def dict_walk(d):
+#     for k,v in d.items():
+#         if type(v) == dict:
+#             print(k)
+#             dict_walk(v)
+#         else:
+#             print(k, ': ', v)
+
+# dict_walk(json_data)
+
+
+# # THESE TWO LINES WORK (ORIGINAL 65+6)
+# for row, post in enumerate(json_data, 1):
+#     # ws.cell(row=1, column=row, value=post)
+# # END THESE TWO LINES
+#     for column, post_val in enumerate(post, 1):
+#         ws.cell(row=row, column=column, value=json_data[column])
+# # WANT TO ADD THE ABOVE TWO TO THE FIRST TWO
+
 
 
 
@@ -59,8 +78,10 @@ for row, post in enumerate(json_data, 1):
     ws.cell(row=1, column=row, value=post)
 # END THESE TWO LINES
     # for column, post_val in enumerate(post, 1):
-        # ws.cell(row=row, column=column, value=str(json_data))
+    #     ws.cell(row=row, column=column, value=json_data[column])
 # WANT TO ADD THE ABOVE TWO TO THE FIRST TWO
+
+
 
 
 # loop through all of the 'results' of the data to populate the rows and columns for each character # def character_data(url_data): #     for col in range(1, len(data.keys())+1):

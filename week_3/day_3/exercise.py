@@ -8,7 +8,7 @@
 
 # import the appropriate modules (you have 3)
 from openpyxl import Workbook, load_workbook
-import json, requests
+import requests, json
 
 character_url = "https://rickandmortyapi.com/api/character"
 # set up a workbook and worksheet titled "Rick and Morty Characters"
@@ -18,35 +18,62 @@ ws.title = "Rick and Morty Characters"
 
 # # assign a variable 'data' with the returned GET request
 data = requests.get(character_url)
+print(data) # 200 if website is available
 # print(type(data))
-json_data = data.text
-character_data = json.loads(json_data)
-print(type(character_data))
-# print(character_data)
-prettier_json = json.dumps(character_data, indent = 4)
-print(type(prettier_json))
-# print(prettier_json)
+prep_data = data.text
+json_data = json.loads(prep_data)
+# json_to_py_dict = json.loads(data)
+# print(type(json_to_py_dict))
+print(f"'json_data' is of type: {type(json_data)}")
+# print(json_data)
+json_str = json.dumps(json_data, indent=2)
+# print(json_str)
+print(f"\n'json_str' is of type: {type(json_str)}\n")
 
 
-# create the appropriate headers in openpyxl for all of the keys for a single character
-for row, post in enumerate(character_data, 1):
-    for column, post_vals in enumerate(post, 1):
-        ws.cell(row=1, column=row, value=post)
-    
-# loop through all of the 'results' of the data to populate the rows and columns for each character
-# def character_data(url_data):
-#     for col in range(1, len(data.keys())+1):
+# print(json_str[info])
+# print(json_data[info])
+# print(json_data.items())
+
+# print(json_to_py_dict)
+# prettier_json = json.dumps(json_to_py_dict, indent = 4)
+
+
+# # create the appropriate headers in openpyxl for all of the keys for a single character
+# for row, post_vals in enumerate(json_to_py_dict, 1):
+#     # for row, post in enumerate(json_to_py_dict, 1):
+#     for column, post_vals in enumerate(post_vals.values(), 1):
+#         # ws.cell(row=1, column=row, value=post)
+#         ws.cell(row=row, column=column, value=str(post_vals))
+
+# GOING TO USE THE JSON_STR which is a json string format to see the difference\
+# with the two lines i know are working. 
+# for row, post in enumerate(json_str, 1):
+#     ws.cell(row=1, column=row, value=post)
+
+
+
+
+# THESE TWO LINES WORK 
+for row, post in enumerate(json_data, 1):
+    ws.cell(row=1, column=row, value=post)
+# END THESE TWO LINES
+    # for column, post_val in enumerate(post, 1):
+        # ws.cell(row=row, column=column, value=str(json_data))
+# WANT TO ADD THE ABOVE TWO TO THE FIRST TWO
+
+
+# loop through all of the 'results' of the data to populate the rows and columns for each character # def character_data(url_data): #     for col in range(1, len(data.keys())+1):
 #         ws.cell(row=2, column=col, value=list(data.values())[col-1])
 
-# character_data(data)
-# NOTE: due to the headers, the rows need to be offset by one!
-
+# character_data(data) # NOTE: due to the headers, the rows need to be offset by one!
 # MEDIUM MODE
-
 # create 2 new worksheets for "Rick and Morty Locations" and "Rick and Morty Episodes"
 sheet2 = wb.create_sheet(title="Rick and Morty Locations")
 sheet3 = wb.create_sheet(title="Rick and Morty Episodes")
-print(wb.sheetnames)
+print("The workbook sheet names are...")
+print(wb.sheetnames) 
+
 # create 2 new variables for episode_url and location_url (retrieve it from the docs!)
 location_url = "https://rickandmortyapi.com/api/location"
 episode_url = "https://rickandmortyapi.com/api/episode"

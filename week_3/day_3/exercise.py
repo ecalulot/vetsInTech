@@ -37,7 +37,7 @@ json_str= json.dumps(json_data, indent=4) # convert to json str obj to see struc
 for col, post in enumerate(json_data, 1): # this creates the headers for a single character, url adjusted to get one character. 
     ws.cell(row=1, column=col, value=post)
     for row, post_data in enumerate(json_data.items(), 1):
-        ws.cell(row=row, column=col, value=str(post_data))
+        ws.cell(row=2, column=row, value=str(post_data[1]))
 
 
 

@@ -10,7 +10,9 @@
 from openpyxl import Workbook, load_workbook
 import requests, json
 
-character_url = "https://rickandmortyapi.com/api/character"
+# character_url = "https://rickandmortyapi.com/api/character"
+
+character_url = "https://rickandmortyapi.com/api/character/2" # for a single character
 # set up a workbook and worksheet titled "Rick and Morty Characters"
 wb = Workbook()
 ws = wb.active
@@ -32,8 +34,8 @@ json_str= json.dumps(json_data, indent=4) # convert to json str obj to see struc
 #     print(v)
 
 # create the appropriate headers in openpyxl for all of the keys for a single character
-for row, post in enumerate(json_data, 1): # this creates the headers
-    ws.cell(row=1, column=row, value=post)
+for col, post in enumerate(json_data, 1): # this creates the headers
+    ws.cell(row=1, column=col, value=post)
 
 # # THESE TWO LINES WORK (ORIGINAL 65+6)
 # for row, post in enumerate(json_data, 1):

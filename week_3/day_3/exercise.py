@@ -35,47 +35,11 @@ prep_data_multi = url_data_multi.text
 json_data_multi = json.loads(prep_data_multi)
 
 
-
-
-
 # create the appropriate headers in openpyxl for all of the keys for a single character
 for col, post in enumerate(json_data_single, 1): # this creates the headers for a single character, url (line 15) adjusted to get one character. 
     ws.cell(row=1, column=col, value=post)
     for row, multi_data in enumerate(json_data_multi.items(), 1):
-        ws.cell(row=2, column=row, value=str(multi_data)) # can call the index of a tuple, but not quite correct if there is a dictionary within
-
-
-
-
-# def character_data(url_data): 
-#     for col in range(2, len(json_data.keys())+1):
-#         ws.cell(row=2, column=col, value=list(json_data.values())[col-1])
-
-
-# character_test = character_data(url_data)
-
-# # THESE TWO LINES WORK (ORIGINAL 65+6)
-# for row, post in enumerate(json_data, 1):
-#     # ws.cell(row=1, column=row, value=post)
-# # END THESE TWO LINES
-#     for column, post_val in enumerate(post, 1):
-#         ws.cell(row=row, column=column, value=json_data[column])
-# # WANT TO ADD THE ABOVE TWO TO THE FIRST TWO
-
-# for col, post_val in enumerate(post, 2):
-#     ws.cell(row=col, column=row, value=post)
-
-    # for column, post_vals in enumerate(post.values()):
-    #     ws.cell(row=row, column=column, value=post_vals)
-    # print(row, post)
-    # print(f"row type is {type(row)}, post type is {type(post)}")
-
-# END THESE TWO LINES
-    # for column, post_val in enumerate(post, 1):
-    #     ws.cell(row=row, column=column, value=json_data[column])
-# WANT TO ADD THE ABOVE TWO TO THE FIRST TWO
-
-
+        ws.cell(row=2, column=row, value=str(multi_data[1])) # can call the index of a tuple, but not quite correct if there is a dictionary within
 
 
 # loop through all of the 'results' of the data to populate the rows and columns for each character 

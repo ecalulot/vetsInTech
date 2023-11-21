@@ -10,34 +10,39 @@
 from openpyxl import Workbook, load_workbook
 import requests, json
 
-# character_url = "https://rickandmortyapi.com/api/character"
+multi_character_url = "https://rickandmortyapi.com/api/character"
 
-character_url = "https://rickandmortyapi.com/api/character/6" # for a single character
+single_character_url = "https://rickandmortyapi.com/api/character/6" # for a single character
 # set up a workbook and worksheet titled "Rick and Morty Characters"
 wb = Workbook()
 ws = wb.active
 ws.title = "Rick and Morty Characters"
 
 # # assign a variable 'data' with the returned GET request
-url_data = requests.get(character_url)
-print(url_data) # 200 if website is available
+url_data_single = requests.get(single_character_url)
+print(url_data_single) # 200 if website is available
 # print(type(data))
-prep_data = url_data.text
-json_data = json.loads(prep_data) # converts json to python dictionary and/or lists
-print(f"'json_data' is of type: {type(json_data)}")
+prep_data = url_data_single.text
+json_data_single = json.loads(prep_data) # converts json to python dictionary and/or lists
+print(f"'json_data' is of type: {type(json_data_single)}")
 # print(json_data)
-json_str= json.dumps(json_data, indent=4) # convert to json str obj to see structure of the data
+json_str= json.dumps(json_data_single, indent=4) # convert to json str obj to see structure of the data
 # print(json_str)
 
-# for k, v in json_data.items():
-#     print(k) # just the keys printed which are "info" and "results"
-#     print(v)
+# data/url/api to get information to fill the remainder of the xlsx 
+url_data_multi = requests.get(multi_character_url)
+prep_data_multi = url_data_multi.text
+json_data_multi = json.loads(prep_data_multi)
+
+
+
+
 
 # create the appropriate headers in openpyxl for all of the keys for a single character
-for col, post in enumerate(json_data, 1): # this creates the headers for a single character, url (line 18) adjusted to get one character. 
+for col, post in enumerate(json_data_single, 1): # this creates the headers for a single character, url (line 15) adjusted to get one character. 
     ws.cell(row=1, column=col, value=post)
-    for row, post_data in enumerate(json_data.items(), 1):
-        ws.cell(row=2, column=row, value=str(post_data[1])) # can call the index of a tuple, but not quite correct if there is a dictionary within
+    for row, multi_data in enumerate(json_data_multi.items(), 1):
+        ws.cell(row=2, column=row, value=str(multi_data)) # can call the index of a tuple, but not quite correct if there is a dictionary within
 
 
 
